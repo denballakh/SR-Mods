@@ -1,0 +1,11 @@
+Name=DenSettingsControl
+Author=denball
+Conflict=
+Priority=0
+Dependence=DenButtonsPack
+Section=Твики
+Languages=Rus
+SmallDescription=Добавляет панель, с помощью которой можно менять настройки партии.
+FullDescription=Добавляет панель на экран космоса, с помощью которой можно менять сложность партии и тонкие настройки.
+FullDescription=В космосе в левом-верхнем углу появятся две кнопки: одна для изменения ТН, другая для изменения сложности.
+FullDescription=<color=0,132,15>Можно подключать/отключать в течение партии.</color>

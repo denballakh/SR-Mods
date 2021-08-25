@@ -1,2 +1,4 @@
 *.txt
 !ModuleInfo.txt
+Mods/Den/DenUtilities/DATA/SR_DLL.cpp
+*_Dev/

@@ -1,8 +1,8 @@
-Name=DenSettingsControl
+Name=SettingsControl
 Author=denball
 Conflict=
 Priority=0
-Dependence=DenButtonsPack
+Dependence=ButtonsPack
 Section=Твики
 Languages=Rus
 SmallDescription=Добавляет панель, с помощью которой можно менять настройки партии.

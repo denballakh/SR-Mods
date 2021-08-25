@@ -1,4 +1,4 @@
-Name=DenButtonsPack
+Name=ButtonsPack
 Author=denball
 Conflict=
 Priority=0

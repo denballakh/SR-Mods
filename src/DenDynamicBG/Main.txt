@@ -1,0 +1,428 @@
+BV ~{
+    OnStart ~{
+        DynamicBG ~{
+            =ShipAddCustomShipInfo(Player(),'Player_DynamicBG');
+        }
+    }
+    OnLoad ~{
+        DynamicBG ~{
+            =if(ShipFindCustomShipInfoByType(Player(),'Player_DynamicBG') == -1)
+            =    ShipAddCustomShipInfo(Player(),'Player_DynamicBG');
+        }
+    }
+}
+DynamicBG ~{
+    __readme_planet ~{
+        requirement=требуемый мод
+        type=planet|planet_pirate
+        race=Maloc|Peleng|People|Fei|Gaal
+        paths ~{
+            city=путь к фону планеты
+            gov=путь к фону в правительстве
+        }
+    }
+    __readme_ruin ~{
+        requirement=требуемый мод
+        type=ruin
+        ruin=SB|PB|...
+        path=фон для базы
+    }
+    city_0 ~{
+        requirement=
+        type=planet
+        race=Maloc
+        paths ~{
+            city=Bm.City.DynamicBG.Maloc_vanilla
+            gov=Bm.City.DynamicBG_gov.Maloc_vanilla
+        }
+    }
+    city_1 ~{
+        requirement=
+        type=planet
+        race=Peleng
+        paths ~{
+            city=Bm.City.DynamicBG.Peleng_vanilla
+            gov=Bm.City.DynamicBG_gov.Peleng_vanilla
+        }
+    }
+    city_2 ~{
+        requirement=
+        type=planet
+        race=People
+        paths ~{
+            city=Bm.City.DynamicBG.People_vanilla
+            gov=Bm.City.DynamicBG_gov.People_vanilla
+        }
+    }
+    city_3 ~{
+        requirement=
+        type=planet
+        race=Fei
+        paths ~{
+            city=Bm.City.DynamicBG.Fei_vanilla
+            gov=Bm.City.DynamicBG_gov.Fei_vanilla
+        }
+    }
+    city_4 ~{
+        requirement=
+        type=planet
+        race=Gaal
+        paths ~{
+            city=Bm.City.DynamicBG.Gaal_vanilla
+            gov=Bm.City.DynamicBG_gov.Gaal_vanilla
+        }
+    }
+    city_klaxon_0 ~{
+        requirement=TweaksKlaxonsCoalitionBG
+        type=planet
+        race=Maloc
+        paths ~{
+            city=Bm.City.DynamicBG.Maloc_KlaxonsCoalitionBG
+            gov=Bm.City.DynamicBG_gov.Maloc_KlaxonsCoalitionBG
+        }
+    }
+    city_klaxon_1 ~{
+        requirement=TweaksKlaxonsCoalitionBG
+        type=planet
+        race=Peleng
+        paths ~{
+            city=Bm.City.DynamicBG.Peleng_KlaxonsCoalitionBG
+            gov=Bm.City.DynamicBG_gov.Peleng_KlaxonsCoalitionBG
+        }
+    }
+    city_klaxon_2 ~{
+        requirement=TweaksKlaxonsCoalitionBG
+        type=planet
+        race=People
+        paths ~{
+            city=Bm.City.DynamicBG.People_KlaxonsCoalitionBG
+            gov=Bm.City.DynamicBG_gov.People_KlaxonsCoalitionBG
+        }
+    }
+    city_klaxon_3 ~{
+        requirement=TweaksKlaxonsCoalitionBG
+        type=planet
+        race=Fei
+        paths ~{
+            city=Bm.City.DynamicBG.Fei_KlaxonsCoalitionBG
+            gov=Bm.City.DynamicBG_gov.Fei_KlaxonsCoalitionBG
+        }
+    }
+    city_klaxon_4 ~{
+        requirement=TweaksKlaxonsCoalitionBG
+        type=planet
+        race=Gaal
+        paths ~{
+            city=Bm.City.DynamicBG.Gaal_KlaxonsCoalitionBG
+            gov=Bm.City.DynamicBG_gov.Gaal_KlaxonsCoalitionBG
+        }
+    }
+    city_polar_0 ~{
+        requirement=PolarPolarCoalitionBG
+        type=planet
+        race=Maloc
+        paths ~{
+            city=Bm.City.DynamicBG.Maloc_PolarCoalitionBG
+            gov=Bm.City.DynamicBG_gov.Maloc_PolarCoalitionBG
+        }
+    }
+    city_polar_1 ~{
+        requirement=PolarPolarCoalitionBG
+        type=planet
+        race=Peleng
+        paths ~{
+            city=Bm.City.DynamicBG.Peleng_PolarCoalitionBG
+            gov=Bm.City.DynamicBG_gov.Peleng_PolarCoalitionBG
+        }
+    }
+    city_polar_2 ~{
+        requirement=PolarPolarCoalitionBG
+        type=planet
+        race=People
+        paths ~{
+            city=Bm.City.DynamicBG.People_PolarCoalitionBG
+            gov=Bm.City.DynamicBG_gov.People_PolarCoalitionBG
+        }
+    }
+    city_polar_3 ~{
+        requirement=PolarPolarCoalitionBG
+        type=planet
+        race=Fei
+        paths ~{
+            city=Bm.City.DynamicBG.Fei_PolarCoalitionBG
+            gov=Bm.City.DynamicBG_gov.Fei_PolarCoalitionBG
+        }
+    }
+    city_polar_4 ~{
+        requirement=PolarPolarCoalitionBG
+        type=planet
+        race=Gaal
+        paths ~{
+            city=Bm.City.DynamicBG.Gaal_PolarCoalitionBG
+            gov=Bm.City.DynamicBG_gov.Gaal_PolarCoalitionBG
+        }
+    }
+    city_fairan_0 ~{
+        requirement=FairansVisionFairanBG
+        type=planet
+        race=Maloc
+        paths ~{
+            city=Bm.City.DynamicBG.Maloc_FairanBG
+            gov=Bm.City.DynamicBG_gov.Maloc_FairanBG
+        }
+    }
+    city_fairan_1 ~{
+        requirement=FairansVisionFairanBG
+        type=planet
+        race=Peleng
+        paths ~{
+            city=Bm.City.DynamicBG.Peleng_FairanBG
+            gov=Bm.City.DynamicBG_gov.Peleng_FairanBG
+        }
+    }
+    city_fairan_2 ~{
+        requirement=FairansVisionFairanBG
+        type=planet
+        race=People
+        paths ~{
+            city=Bm.City.DynamicBG.People_FairanBG
+            gov=Bm.City.DynamicBG_gov.People_FairanBG
+        }
+    }
+    city_fairan_3 ~{
+        requirement=FairansVisionFairanBG
+        type=planet
+        race=Fei
+        paths ~{
+            city=Bm.City.DynamicBG.Fei_FairanBG
+            gov=Bm.City.DynamicBG_gov.Fei_FairanBG
+        }
+    }
+    city_fairan_4 ~{
+        requirement=FairansVisionFairanBG
+        type=planet
+        race=Gaal
+        paths ~{
+            city=Bm.City.DynamicBG.Gaal_FairanBG
+            gov=Bm.City.DynamicBG_gov.Gaal_FairanBG
+        }
+    }
+    city_0_p ~{
+        requirement=
+        type=planet_pirate
+        race=Maloc
+        paths ~{
+            city=Bm.City.DynamicBG.Maloc_vanilla_p
+            gov=Bm.City.DynamicBG_gov.Maloc_vanilla_p
+        }
+    }
+    city_1_p ~{
+        requirement=
+        type=planet_pirate
+        race=Peleng
+        paths ~{
+            city=Bm.City.DynamicBG.Peleng_vanilla_p
+            gov=Bm.City.DynamicBG_gov.Peleng_vanilla_p
+        }
+    }
+    city_2_p ~{
+        requirement=
+        type=planet_pirate
+        race=People
+        paths ~{
+            city=Bm.City.DynamicBG.People_vanilla_p
+            gov=Bm.City.DynamicBG_gov.People_vanilla_p
+        }
+    }
+    city_3_p ~{
+        requirement=
+        type=planet_pirate
+        race=Fei
+        paths ~{
+            city=Bm.City.DynamicBG.Fei_vanilla_p
+            gov=Bm.City.DynamicBG_gov.Fei_vanilla_p
+        }
+    }
+    city_4_p ~{
+        requirement=
+        type=planet_pirate
+        race=Gaal
+        paths ~{
+            city=Bm.City.DynamicBG.Gaal_vanilla_p
+            gov=Bm.City.DynamicBG_gov.Gaal_vanilla_p
+        }
+    }
+
+
+
+    city_polar_0_p ~{
+        requirement=PolarPolarPirateBG
+        type=planet_pirate
+        race=Maloc
+        paths ~{
+            city=Bm.City.DynamicBG.Maloc_polar_p
+            gov=Bm.City.DynamicBG_gov.Maloc_polar_p
+        }
+    }
+    city_polar_1_p ~{
+        requirement=PolarPolarPirateBG
+        type=planet_pirate
+        race=Peleng
+        paths ~{
+            city=Bm.City.DynamicBG.Peleng_polar_p
+            gov=Bm.City.DynamicBG_gov.Peleng_polar_p
+        }
+    }
+    city_polar_2_p ~{
+        requirement=PolarPolarPirateBG
+        type=planet_pirate
+        race=People
+        paths ~{
+            city=Bm.City.DynamicBG.People_polar_p
+            gov=Bm.City.DynamicBG_gov.People_polar_p
+        }
+    }
+    city_polar_3_p ~{
+        requirement=PolarPolarPirateBG
+        type=planet_pirate
+        race=Fei
+        paths ~{
+            city=Bm.City.DynamicBG.Fei_polar_p
+            gov=Bm.City.DynamicBG_gov.Fei_polar_p
+        }
+    }
+    city_polar_4_p ~{
+        requirement=PolarPolarPirateBG
+        type=planet_pirate
+        race=Gaal
+        paths ~{
+            city=Bm.City.DynamicBG.Gaal_polar_p
+            gov=Bm.City.DynamicBG_gov.Gaal_polar_p
+        }
+    }
+    ruin_BK ~{
+        requirement=
+        type=ruin
+        ruin=BK
+        path=Bm.City.DynamicBG_ruin.BK
+    }
+    ruin_CB ~{
+        requirement=
+        type=ruin
+        ruin=CB
+        path=Bm.City.DynamicBG_ruin.CB
+    }
+    ruin_DB ~{
+        requirement=
+        type=ruin
+        ruin=DB
+        path=Bm.City.DynamicBG_ruin.DB
+    }
+    ruin_MC ~{
+        requirement=
+        type=ruin
+        ruin=MC
+        path=Bm.City.DynamicBG_ruin.MC
+    }
+    ruin_PB ~{
+        requirement=
+        type=ruin
+        ruin=PB
+        path=Bm.City.DynamicBG_ruin.PB
+    }
+    ruin_RC ~{
+        requirement=
+        type=ruin
+        ruin=RC
+        path=Bm.City.DynamicBG_ruin.RC
+    }
+    ruin_SB ~{
+        requirement=
+        type=ruin
+        ruin=SB
+        path=Bm.City.DynamicBG_ruin.SB
+    }
+    ruin_WB ~{
+        requirement=
+        type=ruin
+        ruin=WB
+        path=Bm.City.DynamicBG_ruin.WB
+    }
+
+
+
+    ruin_BK_KlaxonStationsBG ~{
+        requirement=TweaksKlaxonsStationsBG
+        type=ruin
+        ruin=BK
+        path=Bm.City.DynamicBG_ruin.BK_KlaxonsStationsBG
+    }
+    ruin_MC_KlaxonStationsBG ~{
+        requirement=TweaksKlaxonsStationsBG
+        type=ruin
+        ruin=MC
+        path=Bm.City.DynamicBG_ruin.MC_KlaxonsStationsBG
+    }
+    ruin_PB_KlaxonStationsBG ~{
+        requirement=TweaksKlaxonsStationsBG
+        type=ruin
+        ruin=PB
+        path=Bm.City.DynamicBG_ruin.PB_KlaxonsStationsBG
+    }
+    ruin_RC_KlaxonStationsBG ~{
+        requirement=TweaksKlaxonsStationsBG
+        type=ruin
+        ruin=RC
+        path=Bm.City.DynamicBG_ruin.RC_KlaxonsStationsBG
+    }
+    ruin_SB_KlaxonStationsBG ~{
+        requirement=TweaksKlaxonsStationsBG
+        type=ruin
+        ruin=SB
+        path=Bm.City.DynamicBG_ruin.SB_KlaxonsStationsBG
+    }
+    ruin_WB_KlaxonStationsBG ~{
+        requirement=TweaksKlaxonsStationsBG
+        type=ruin
+        ruin=WB
+        path=Bm.City.DynamicBG_ruin.WB_KlaxonsStationsBG
+    }
+
+
+    ruin_BK_PolarStationsBG ~{
+        requirement=PolarPolarStationsBG
+        type=ruin
+        ruin=BK
+        path=Bm.City.DynamicBG_ruin.BK_PolarStationsBG
+    }
+    ruin_MC_PolarStationsBG ~{
+        requirement=PolarPolarStationsBG
+        type=ruin
+        ruin=MC
+        path=Bm.City.DynamicBG_ruin.MC_PolarStationsBG
+    }
+    ruin_PB_PolarStationsBG ~{
+        requirement=PolarPolarStationsBG
+        type=ruin
+        ruin=PB
+        path=Bm.City.DynamicBG_ruin.PB_PolarStationsBG
+    }
+    ruin_RC_PolarStationsBG ~{
+        requirement=PolarPolarStationsBG
+        type=ruin
+        ruin=RC
+        path=Bm.City.DynamicBG_ruin.RC_PolarStationsBG
+    }
+    ruin_SB_PolarStationsBG ~{
+        requirement=PolarPolarStationsBG
+        type=ruin
+        ruin=SB
+        path=Bm.City.DynamicBG_ruin.SB_PolarStationsBG
+    }
+    ruin_WB_PolarStationsBG ~{
+        requirement=PolarPolarStationsBG
+        type=ruin
+        ruin=WB
+        path=Bm.City.DynamicBG_ruin.WB_PolarStationsBG
+    }
+}

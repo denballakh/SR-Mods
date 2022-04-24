@@ -1,0 +1,6 @@
+Bm ~{
+    SettingsControl ~{
+        BG_AA=Mods/Den/DenSettingsControl/DATA/BG_AA.gi
+        BG_Diff=Mods/Den/DenSettingsControl/DATA/BG_Diff.gi
+    }
+}

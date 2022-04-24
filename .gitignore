@@ -1,4 +1,6 @@
-*.txt
-!ModuleInfo.txt
-Mods/Den/DenUtilities/DATA/SR_DLL.cpp
-*_Dev/
+/build/
+/backup/
+/dist/
+.tmp/
+.build/
+__pycache__/

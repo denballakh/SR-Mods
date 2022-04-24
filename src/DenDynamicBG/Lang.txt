@@ -1,0 +1,171 @@
+ShipInfo ~{
+    AddInfo ~{
+        CustomInfos ~{
+            Player_DynamicBG ~{
+                Description=NoShow
+                Icon=0
+                Name=
+                OnActCodeTypes=t_OnEnteringForm
+                OnActCode ~{
+                    =dword planet = GetShipPlanet(Player());
+                    =dword ruin = GetShipRuins(Player());
+                    =if (!ruin && !planet) exit;
+                    =str curform = CurrentForm();
+                    =if (curform != 'Planet' && curform != 'EquipmentShop' && curform != 'Hangar' && curform != 'GoodsShop' && curform != 'Info' && curform != 'Gov' && curform != 'RuinsTalk') exit;
+                    =str type = '';
+                    =if (planet)
+                    ~{
+                        =if (planet == PlanetPirateClan()) exit;
+                        =int owner = PlanetOwner(planet);
+                        =int race = PlanetRace(planet);
+                        =str race_s = '';
+                        =if (owner == None) exit;
+                        =if (owner == Kling) exit;
+                        =if (owner == PirateClan) type = 'planet_pirate';
+                        =else type = 'planet';
+                        =if (race == Maloc) race_s = 'Maloc';
+                        =else if (race == Peleng) race_s = 'Peleng';
+                        =else if (race == People) race_s = 'People';
+                        =else if (race == Fei) race_s = 'Fei';
+                        =else if (race == Gaal) race_s = 'Gaal';
+                    }
+                    =else if (ruin)
+                    ~{
+                        =if (PlayerBridge()) exit;
+                        =if (ShipTypeN(ruin) < t_RC) exit;
+                        =str ruin_type = ShipType(ruin);
+                        =//SFT('ruin_type='+ruin_type);
+                        =type = 'ruin';
+                    }
+                    =else exit;
+                    =function ModName(mod) 
+                    ~{
+                        =result = trim(Format(mod, '/', '', '\\', '', ''));
+                    }
+                    =function ModEnabled(mod)
+                    ~{
+                        =mod = ModName(mod);
+                        =if (mod == '')
+                        ~{
+                            =result = 1;
+                            =exit;
+                        }
+                        =for (int i = 0; i < CurrentMods(); i = i + 1)
+                        ~{
+                            =if (ModName(CurrentMods(i)) == mod)
+                            ~{
+                                =result = 1;
+                                =exit;
+                            }
+                        }
+                        =SFT('mod ' + mod + ' isnt enabled');
+                        =result = 0;
+                    }
+                    =str MAIN_PATH = 'DynamicBG';
+                    =//SFT('type='+type);
+                    =//SFT('race_s='+race_s);
+                    =unknown main;
+                    =unknown bgs = newarray(1);
+                    =GetMainData(MAIN_PATH, main);
+                    =//SFT(main);
+                    =int i; int j;
+                    =for (i = 0; i < ArrayDim(main); i = i + 1)
+                    ~{
+                        =if (main[i,'type'] != type) continue;
+                        =if (!ModEnabled(main[i,'requirement'])) continue;
+                        =//SFT('i = ' + i);
+                        =//SFT('name(i) = ' + GetVariableName(main[i]));
+                        =if (type == 'ruin')
+                        ~{
+                            =if (main[i,'ruin'] != ruin_type) continue;
+                            =if (!ResourceExist(main[i,'path'])) continue;
+                            =ArrayAdd(bgs, main[i,'path']);
+                        }
+                        =else if (type == 'planet' || type == 'planet_pirate')
+                        ~{
+                            =if (main[i,'race'] != race_s) continue;
+                            =j = ArrayDim(bgs);
+                            =//SFT('j='+j);
+                            =if (!ResourceExist(main[i,'paths','city'])) continue;
+                            =if (!ResourceExist(main[i,'paths','gov'])) continue;
+                            =ArrayAdd(bgs, newarray(2));
+                            =bgs[j,0] = main[i,'paths','city'];
+                            =bgs[j,1] = main[i,'paths','gov'];
+                        }
+                    }
+                    =if (ArrayDim(bgs) == 1) exit;
+                    =ArrayDelete(bgs, 0);
+                    =SFT(bgs);
+                    =int n = ArrayDim(bgs);
+                    =SFT('n='+n);
+                    =int hash = 0;
+                    =if (type == 'planet' || type == 'planet_pirate')
+                    ~{
+                        =hash = 1;
+                        =hash = hash * (1 + Id(planet));
+                        =hash = hash * (1 + Id(PlanetToStar(planet)));
+                        =hash = hash * (1 + PlanetRace(planet));
+                        =hash = hash * (1 + PlanetGov(planet));
+                        =hash = hash * (1 + PlanetEco(planet));
+                        =hash = hash * (1 + PlanetOrbitRadius(planet));
+                        =hash = hash * (1 + PlanetOrbitalVelocity(planet));
+                        =hash = hash * (1 + PlanetSize(planet));
+                        =if (hash == 0) throw "zero";
+                        =if (hash < 0) hash = -hash;
+                        =hash = hash % 997; // 997 - prime
+                    }
+                    =else if (type == 'ruin') 
+                    ~{
+                        =hash = 1;
+                        =hash = hash * (1 + Id(ruin));
+                        =hash = hash * (1 + ShipTypeN(ruin));
+                        =hash = hash * (1 + GetOwner(ruin));
+                        =hash = hash * (1 + ShipPilotRace(ruin));
+                        =if (hash == 0) throw "zero";
+                        =if (hash < 0) hash = -hash;
+                        =hash = hash % 997; // 997 - prime
+                    }
+                    =SFT('hash='+hash);
+                    =hash = Rnd(1000, 2000) % 997;
+                    =i = hash % n;
+                    =//SFT('result_index='+i);
+                    =if (type == 'planet' || type == 'planet_pirate')
+                    ~{
+                        =//SFT('setting planet bg');
+                        =str res_city = bgs[i,0];
+                        =str res_gov = bgs[i,1];
+                        =SFT('city='+res_city);
+                        =SFT('gov='+res_gov);
+                        =if (curform == 'Planet')
+                        =    InterfaceImage('Planet','BGCity','GI,' + res_city);
+                        =if (curform == 'EquipmentShop')
+                        =    InterfaceImage('EquipmentShop','BGCity','GI,' + res_city);
+                        =if (curform == 'Hangar')
+                        =    InterfaceImage('Hangar','BGCity','GI,' + res_city);
+                        =if (curform == 'GoodsShop')
+                        =    InterfaceImage('GoodsShop','BGCity','GI,' + res_city);
+                        =if (curform == 'Info')
+                        =    InterfaceImage('Info','BGCity','GI,' + res_city);
+                        =if (curform == 'Gov')
+                        =    InterfaceImage('Gov','Gov' + race_s + ':BG','GI,' + res_gov);
+                    }
+                    =else if (type == 'ruin') 
+                    ~{
+                        =str res_ruin = bgs[i];
+                        =SFT('setting ruin bg='+res_ruin);
+                        =if (curform == 'RuinsTalk')
+                        =    InterfaceImage('RuinsTalk','ImageBG','GI,'+res_ruin);
+                        =if (curform == 'EquipmentShop')
+                        =    InterfaceImage('EquipmentShop','BGCity','GI,' + res_ruin);
+                        =if (curform == 'Hangar')
+                        =    InterfaceImage('Hangar','BGCity','GI,' + res_ruin);
+                        =if (curform == 'GoodsShop')
+                        =    InterfaceImage('GoodsShop','BGCity','GI,' + res_ruin);
+                        =if (curform == 'Info')
+                        =    InterfaceImage('Info','BGCity','GI,' + res_ruin);
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,103 @@
+Bm ~{
+    City ~{
+        DynamicBG ~{
+            Maloc_vanilla=DATA\CityBG\2Maloc.gi
+            Maloc_KlaxonsCoalitionBG=Mods\Tweaks\KlaxonsCoalitionBG\DATA\CityBG\2Maloc.gi
+            Maloc_PolarCoalitionBG=Mods\Polar\PolarCoalitionBG\DATA\CityBG\2Maloc.gi
+            Maloc_FairanBG=Mods\FairansVision\FairanBG\DATA\CityBG\2Maloc.gi
+            
+            Peleng_vanilla=DATA\CityBG\2Peleng.gi
+            Peleng_KlaxonsCoalitionBG=Mods\Tweaks\KlaxonsCoalitionBG\DATA\CityBG\2Peleng.gi
+            Peleng_PolarCoalitionBG=Mods\Polar\PolarCoalitionBG\DATA\CityBG\2Peleng.gi
+            Peleng_FairanBG=Mods\FairansVision\FairanBG\DATA\CityBG\2Peleng.gi
+            
+            People_vanilla=DATA\CityBG\2People.gi
+            People_KlaxonsCoalitionBG=Mods\Tweaks\KlaxonsCoalitionBG\DATA\CityBG\2People.gi
+            People_PolarCoalitionBG=Mods\Polar\PolarCoalitionBG\DATA\CityBG\2People.gi
+            People_FairanBG=Mods\FairansVision\FairanBG\DATA\CityBG\2People.gi
+            
+            Fei_vanilla=DATA\CityBG\2Fei.gi
+            Fei_KlaxonsCoalitionBG=Mods\Tweaks\KlaxonsCoalitionBG\DATA\CityBG\2Fei.gi
+            Fei_PolarCoalitionBG=Mods\Polar\PolarCoalitionBG\DATA\CityBG\2Fei.gi
+            Fei_FairanBG=Mods\FairansVision\FairanBG\DATA\CityBG\2Fei.gi
+            
+            Gaal_vanilla=DATA\CityBG\2Gaal.gi
+            Gaal_KlaxonsCoalitionBG=Mods\Tweaks\KlaxonsCoalitionBG\DATA\CityBG\2Gaal.gi
+            Gaal_PolarCoalitionBG=Mods\Polar\PolarCoalitionBG\DATA\CityBG\2Gaal.gi
+            Gaal_FairanBG=Mods\FairansVision\FairanBG\DATA\CityBG\2Gaal.gi
+            
+            Maloc_vanilla_p=DATA\CityBG\MalocPirate.gi
+            Peleng_vanilla_p=DATA\CityBG\PelengPirate.gi
+            People_vanilla_p=DATA\CityBG\PeoplePirate.gi
+            Fei_vanilla_p=DATA\CityBG\FeiPirate.gi
+            Gaal_vanilla_p=DATA\CityBG\GaalPirate.gi
+
+            Maloc_polar_p=Mods\Polar\PolarPirateBG\DATA\CityBG\MalocPirate.gi
+            Peleng_polar_p=Mods\Polar\PolarPirateBG\DATA\CityBG\PelengPirate.gi
+            People_polar_p=Mods\Polar\PolarPirateBG\DATA\CityBG\PeoplePirate.gi
+            Fei_polar_p=Mods\Polar\PolarPirateBG\DATA\CityBG\FeiPirate.gi
+            Gaal_polar_p=Mods\Polar\PolarPirateBG\DATA\CityBG\GaalPirate.gi
+        }
+        DynamicBG_ruin ~{
+            BK=data\FormRuinsBG\2BKbg.gi
+            CB=data\FormRuinsBG\2CBbg.gi
+            DB=data\FormRuinsBG\2DestroyerBridgebg.gi
+            MC=data\FormRuinsBG\2MCbg.gi
+            PB=data\FormRuinsBG\2PBbg.gi
+            RC=data\FormRuinsBG\2RCbg.gi
+            SB=data\FormRuinsBG\2SBbg.gi
+            WB=data\FormRuinsBG\2WBbg.gi
+            BK_KlaxonsStationsBG=Mods\Tweaks\KlaxonsStationsBG\DATA\FormRuinsBG\2BKbg.gi
+            MC_KlaxonsStationsBG=Mods\Tweaks\KlaxonsStationsBG\DATA\FormRuinsBG\2MCbg.gi
+            PB_KlaxonsStationsBG=Mods\Tweaks\KlaxonsStationsBG\DATA\FormRuinsBG\2PBbg.gi
+            RC_KlaxonsStationsBG=Mods\Tweaks\KlaxonsStationsBG\DATA\FormRuinsBG\2RCbg.gi
+            SB_KlaxonsStationsBG=Mods\Tweaks\KlaxonsStationsBG\DATA\FormRuinsBG\2SBbg.gi
+            WB_KlaxonsStationsBG=Mods\Tweaks\KlaxonsStationsBG\DATA\FormRuinsBG\2WBbg.gi
+            BK_PolarStationsBG=Mods\Polar\PolarStationsBG\DATA\FormRuinsBG\2BKbg.gi
+            MC_PolarStationsBG=Mods\Polar\PolarStationsBG\DATA\FormRuinsBG\2MCbg.gi
+            PB_PolarStationsBG=Mods\Polar\PolarStationsBG\DATA\FormRuinsBG\2PBbg.gi
+            RC_PolarStationsBG=Mods\Polar\PolarStationsBG\DATA\FormRuinsBG\2RCbg.gi
+            SB_PolarStationsBG=Mods\Polar\PolarStationsBG\DATA\FormRuinsBG\2SBbg.gi
+            WB_PolarStationsBG=Mods\Polar\PolarStationsBG\DATA\FormRuinsBG\2WBbg.gi
+        }
+        DynamicBG_gov ~{
+            Maloc_vanilla=data\GovBG\2MalocBG.gi
+            Maloc_KlaxonsCoalitionBG=Mods\Tweaks\KlaxonsCoalitionBG\DATA\GovBG\2MalocBG.gi
+            Maloc_PolarCoalitionBG=Mods\Polar\PolarCoalitionBG\DATA\GovBG\2MalocBG.gi
+            Maloc_FairanBG=Mods\FairansVision\FairanBG\DATA\GovBG\2MalocBG.gi
+
+            Peleng_vanilla=data\GovBG\2PelengBG.gi
+            Peleng_KlaxonsCoalitionBG=Mods\Tweaks\KlaxonsCoalitionBG\DATA\GovBG\2PelengBG.gi
+            Peleng_PolarCoalitionBG=Mods\Polar\PolarCoalitionBG\DATA\GovBG\2PelengBG.gi
+            Peleng_FairanBG=Mods\FairansVision\FairanBG\DATA\GovBG\2PelengBG.gi
+
+            People_vanilla=data\GovBG\2PeopleBG.gi
+            People_KlaxonsCoalitionBG=Mods\Tweaks\KlaxonsCoalitionBG\DATA\GovBG\2PeopleBG.gi
+            People_PolarCoalitionBG=Mods\Polar\PolarCoalitionBG\DATA\GovBG\2PeopleBG.gi
+            People_FairanBG=Mods\FairansVision\FairanBG\DATA\GovBG\2PeopleBG.gi
+
+            Fei_vanilla=data\GovBG\2FeiBG.gi
+            Fei_KlaxonsCoalitionBG=Mods\Tweaks\KlaxonsCoalitionBG\DATA\GovBG\2FeiBG.gi
+            Fei_PolarCoalitionBG=Mods\Polar\PolarCoalitionBG\DATA\GovBG\2FeiBG.gi
+            Fei_FairanBG=Mods\FairansVision\FairanBG\DATA\GovBG\2FeiBG.gi
+
+            Gaal_vanilla=data\GovBG\2GaalBG.gi
+            Gaal_KlaxonsCoalitionBG=Mods\Tweaks\KlaxonsCoalitionBG\DATA\GovBG\2GaalBG.gi
+            Gaal_PolarCoalitionBG=Mods\Polar\PolarCoalitionBG\DATA\GovBG\2GaalBG.gi
+            Gaal_FairanBG=Mods\FairansVision\FairanBG\DATA\GovBG\2GaalBG.gi
+
+
+            Maloc_vanilla_p=data\GovBG\MalocPirateBG.gi
+            Peleng_vanilla_p=data\GovBG\PelengPirateBG.gi
+            People_vanilla_p=data\GovBG\PeoplePirateBG.gi
+            Fei_vanilla_p=data\GovBG\FeiPirateBG.gi
+            Gaal_vanilla_p=data\GovBG\GaalPirateBG.gi
+
+            Maloc_polar_p=Mods\Polar\PolarPirateBG\data\GovBG\MalocPirateBG.gi
+            Peleng_polar_p=Mods\Polar\PolarPirateBG\data\GovBG\PelengPirateBG.gi
+            People_polar_p=Mods\Polar\PolarPirateBG\data\GovBG\PeoplePirateBG.gi
+            Fei_polar_p=Mods\Polar\PolarPirateBG\data\GovBG\FeiPirateBG.gi
+            Gaal_polar_p=Mods\Polar\PolarPirateBG\data\GovBG\GaalPirateBG.gi
+        }
+    }
+}

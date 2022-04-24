@@ -1,0 +1,2573 @@
+ML ~{
+    Style ~{
+        Buttons ~{
+            GreenPlus ^{
+                ImageDisable=GI,Bm.Buttons.18.Plus.Green.H
+                ImageDown=GI,Bm.Buttons.18.Plus.Green.D
+                ImageNormal=GI,Bm.Buttons.18.Plus.Green.N
+                ImageNormalA=GI,Bm.Buttons.18.Plus.Green.A
+            }
+            YellowCircle ^{
+                ImageDisable=GI,Bm.Buttons.18.Circle.Yellow.H
+                ImageDown=GI,Bm.Buttons.18.Circle.Yellow.D
+                ImageNormal=GI,Bm.Buttons.18.Circle.Yellow.N
+                ImageNormalA=GI,Bm.Buttons.18.Circle.Yellow.A
+            }
+            RedMinus ^{
+                ImageDisable=GI,Bm.Buttons.18.Minus.Red.H
+                ImageDown=GI,Bm.Buttons.18.Minus.Red.D
+                ImageNormal=GI,Bm.Buttons.18.Minus.Red.N
+                ImageNormalA=GI,Bm.Buttons.18.Minus.Red.A
+            }
+            Percent ^{
+                ImageDisable=GI,Bm.Buttons.18.Percent.Blue.H
+                ImageDown=GI,Bm.Buttons.18.Percent.Blue.D
+                ImageNormal=GI,Bm.Buttons.18.Percent.Blue.N
+                ImageNormalA=GI,Bm.Buttons.18.Percent.Blue.A
+            }
+            Empty ^{
+                ImageDisable=GI,Bm.Buttons.18.Empty.Blue.H
+                ImageDown=GI,Bm.Buttons.18.Empty.Blue.D
+                ImageNormal=GI,Bm.Buttons.18.Empty.Blue.N
+                ImageNormalA=GI,Bm.Buttons.18.Empty.Blue.A
+            }
+            GreenPlus_disabled ^{
+                ImageNormal=GI,Bm.Buttons.18.Plus.Green.H
+            }
+            YellowCircle_disabled ^{
+                ImageNormal=GI,Bm.Buttons.18.Circle.Yellow.H
+            }
+            RedMinus_disabled ^{
+                ImageNormal=GI,Bm.Buttons.18.Minus.Red.H
+            }
+            Percent_disabled ^{
+                ImageNormal=GI,Bm.Buttons.18.Percent.Blue.H
+            }
+            Empty_disabled ~{
+                ImageNormal=GI,Bm.Buttons.18.Empty.Blue.H
+            }
+        }
+    }
+    StarMap ~{
+        Panel ~{
+            SettingsControlPanel ~{
+                Panel ~{
+                    Active=True
+                    Name=scMainPanel
+                    Pos=0,0,-7
+                    Size=800,485
+                    Panel ~{
+                        Active=True
+                        Name=scOpenButton
+                        Pos=0,0
+                        Size=36,18
+                        GraphButton ~{
+                            ImageDown=GI,Bm.Buttons.18.Hammer.Blue.D
+                            ImageNormal=GI,Bm.Buttons.18.Hammer.Blue.N
+                            ImageNormalA=GI,Bm.Buttons.18.Hammer.Blue.A
+                            ImageDisable=GI,Bm.Buttons.18.Hammer.Blue.H
+                            Kind=Normal
+                            KindHit=Rect
+                            MouseBlocking=True
+                            MouseBlockingTest=True
+                            OnPressCode ~{
+                                0=ExecuteCodeFromString(GenerateCodeStringFromBlock('SC.Functions.AAOpen'));
+                            }
+                            Pos=0,0
+                            Size=18,18
+                            Style=Style.GB.SoundNormal
+                        }
+                        GraphButton ~{
+                            ImageDown=GI,Bm.Buttons.18.Percent.Blue.D
+                            ImageNormal=GI,Bm.Buttons.18.Percent.Blue.N
+                            ImageNormalA=GI,Bm.Buttons.18.Percent.Blue.A
+                            ImageDisable=GI,Bm.Buttons.18.Percent.Blue.H
+                            Kind=Normal
+                            KindHit=Rect
+                            MouseBlocking=True
+                            MouseBlockingTest=True
+                            OnPressCode ~{
+                                0=ExecuteCodeFromString(GenerateCodeStringFromBlock('SC.Functions.DiffOpen'));
+                            }
+                            Pos=18,0
+                            Size=18,18
+                            Style=Style.GB.SoundNormal
+                        }
+                    }
+                    Panel ~{
+                        Active=False
+                        Name=scAAPanel
+                        Pos=0,0
+                        Size=800,485
+                        Image ~{
+                            Image=GI,Bm.SettingsControl.BG_AA
+                            MouseBlocking=True
+                            MouseBlockingTest=True
+                            Pos=0,0,10
+                            Size=800,485
+                        }
+                        GraphButton ~{
+                            ImageDown=GI,Bm.Buttons.18.Hammer.Blue.D
+                            ImageNormal=GI,Bm.Buttons.18.Hammer.Blue.N
+                            ImageNormalA=GI,Bm.Buttons.18.Hammer.Blue.A
+                            ImageDisable=GI,Bm.Buttons.18.Hammer.Blue.H
+                            Kind=Normal
+                            KindHit=Rect
+                            MouseBlocking=True
+                            MouseBlockingTest=True
+                            OnPressCode ~{
+                                0=ExecuteCodeFromString(GenerateCodeStringFromBlock('SC.Functions.ClosePanel'));
+                            }
+                            Pos=0,0
+                            Size=18,18
+                            Style=Style.GB.SoundNormal
+                        }
+                        GraphButton ~{
+                            ImageDown=GI,Bm.Buttons.18.Percent.Blue.D
+                            ImageNormal=GI,Bm.Buttons.18.Percent.Blue.N
+                            ImageNormalA=GI,Bm.Buttons.18.Percent.Blue.A
+                            ImageDisable=GI,Bm.Buttons.18.Percent.Blue.H
+                            Kind=Normal
+                            KindHit=Rect
+                            MouseBlocking=True
+                            MouseBlockingTest=True
+                            OnPressCode ~{
+                                0=ExecuteCodeFromString(GenerateCodeStringFromBlock('SC.Functions.DiffOpen'));
+                            }
+                            Pos=18,0
+                            Size=18,18
+                            Style=Style.GB.SoundNormal
+                        }
+                        Label ^{
+                            AlignX=Center
+                            AlignY=CenterEx
+                            Font=Font.2NormalBold
+                            Name=scTitle
+                            Pos=250,4
+                            Size=300,15
+                            Text=Изменение тонких настроек партии:
+                            TextColor=255,255,255
+                            WordWrap=True
+                        }
+                        Panel ~{
+                            Active=True
+                            Pos=15,25,-3
+                            Size=770,450
+                            Panel ~{
+                                Active=True
+                                Pos=0,0
+                                Size=250,30
+                                Name=scItem_0
+                                Label ~{
+                                    AlignX=Left
+                                    AlignY=CenterEx
+                                    Font=Font.1Small
+                                    Name=scItem_text_0
+                                    Pos=0,0
+                                    Size=150,30
+                                    Text=Описание настройки:
+                                    TextColor=255,255,255
+                                    WordWrap=True
+                                }
+                                Label ~{
+                                    AlignX=Right
+                                    AlignY=CenterEx
+                                    Font=Font.1Small
+                                    Name=scItem_value_0
+                                    Pos=100,0
+                                    Size=120,30
+                                    Text=---
+                                    TextColor=255,255,255
+                                    WordWrap=True
+                                }
+                                Panel ~{
+                                    Active=True
+                                    Pos=220,0
+                                    Size=30,30
+                                    GraphButton ~{
+                                        ImageDown=GI,Bm.Buttons.18.Empty.Blue.D
+                                        ImageNormal=GI,Bm.Buttons.18.Empty.Blue.N
+                                        ImageNormalA=GI,Bm.Buttons.18.Empty.Blue.A
+                                        ImageDisable=GI,Bm.Buttons.18.Empty.Blue.H
+                                        Name=scItem_button_0
+                                        Kind=Normal
+                                        KindHit=Rect
+                                        MouseBlocking=True
+                                        MouseBlockingTest=False
+                                        OnPressCode ~{
+                                            =ExecuteCodeFromString(GenerateCodeStringFromBlock('SC.Functions.AAItemPress'), 'index', 0);
+                                        }
+                                        Pos=6,6
+                                        Size=18,18
+                                        Style=Style.GB.SoundNormal
+                                    }
+                                }
+                            }
+                            Panel ~{
+                                Active=True
+                                Pos=0,35
+                                Size=250,30
+                                Name=scItem_1
+                                Label ~{
+                                    AlignX=Left
+                                    AlignY=CenterEx
+                                    Font=Font.1Small
+                                    Name=scItem_text_1
+                                    Pos=0,0
+                                    Size=150,30
+                                    Text=Описание настройки:
+                                    TextColor=255,255,255
+                                    WordWrap=True
+                                }
+                                Label ~{
+                                    AlignX=Right
+                                    AlignY=CenterEx
+                                    Font=Font.1Small
+                                    Name=scItem_value_1
+                                    Pos=100,0
+                                    Size=120,30
+                                    Text=---
+                                    TextColor=255,255,255
+                                    WordWrap=True
+                                }
+                                Panel ~{
+                                    Active=True
+                                    Pos=220,0
+                                    Size=30,30
+                                    GraphButton ~{
+                                        ImageDown=GI,Bm.Buttons.18.Empty.Blue.D
+                                        ImageNormal=GI,Bm.Buttons.18.Empty.Blue.N
+                                        ImageNormalA=GI,Bm.Buttons.18.Empty.Blue.A
+                                        ImageDisable=GI,Bm.Buttons.18.Empty.Blue.H
+                                        Name=scItem_button_1
+                                        Kind=Normal
+                                        KindHit=Rect
+                                        MouseBlocking=True
+                                        MouseBlockingTest=False
+                                        OnPressCode ~{
+                                            =ExecuteCodeFromString(GenerateCodeStringFromBlock('SC.Functions.AAItemPress'), 'index', 1);
+                                        }
+                                        Pos=6,6
+                                        Size=18,18
+                                        Style=Style.GB.SoundNormal
+                                    }
+                                }
+                            }
+                            Panel ~{
+                                Active=True
+                                Pos=0,70
+                                Size=250,30
+                                Name=scItem_2
+                                Label ~{
+                                    AlignX=Left
+                                    AlignY=CenterEx
+                                    Font=Font.1Small
+                                    Name=scItem_text_2
+                                    Pos=0,0
+                                    Size=150,30
+                                    Text=Описание настройки:
+                                    TextColor=255,255,255
+                                    WordWrap=True
+                                }
+                                Label ~{
+                                    AlignX=Right
+                                    AlignY=CenterEx
+                                    Font=Font.1Small
+                                    Name=scItem_value_2
+                                    Pos=100,0
+                                    Size=120,30
+                                    Text=---
+                                    TextColor=255,255,255
+                                    WordWrap=True
+                                }
+                                Panel ~{
+                                    Active=True
+                                    Pos=220,0
+                                    Size=30,30
+                                    GraphButton ~{
+                                        ImageDown=GI,Bm.Buttons.18.Empty.Blue.D
+                                        ImageNormal=GI,Bm.Buttons.18.Empty.Blue.N
+                                        ImageNormalA=GI,Bm.Buttons.18.Empty.Blue.A
+                                        ImageDisable=GI,Bm.Buttons.18.Empty.Blue.H
+                                        Name=scItem_button_2
+                                        Kind=Normal
+                                        KindHit=Rect
+                                        MouseBlocking=True
+                                        MouseBlockingTest=False
+                                        OnPressCode ~{
+                                            =ExecuteCodeFromString(GenerateCodeStringFromBlock('SC.Functions.AAItemPress'), 'index', 2);
+                                        }
+                                        Pos=6,6
+                                        Size=18,18
+                                        Style=Style.GB.SoundNormal
+                                    }
+                                }
+                            }
+                            Panel ~{
+                                Active=True
+                                Pos=0,105
+                                Size=250,30
+                                Name=scItem_3
+                                Label ~{
+                                    AlignX=Left
+                                    AlignY=CenterEx
+                                    Font=Font.1Small
+                                    Name=scItem_text_3
+                                    Pos=0,0
+                                    Size=150,30
+                                    Text=Описание настройки:
+                                    TextColor=255,255,255
+                                    WordWrap=True
+                                }
+                                Label ~{
+                                    AlignX=Right
+                                    AlignY=CenterEx
+                                    Font=Font.1Small
+                                    Name=scItem_value_3
+                                    Pos=100,0
+                                    Size=120,30
+                                    Text=---
+                                    TextColor=255,255,255
+                                    WordWrap=True
+                                }
+                                Panel ~{
+                                    Active=True
+                                    Pos=220,0
+                                    Size=30,30
+                                    GraphButton ~{
+                                        ImageDown=GI,Bm.Buttons.18.Empty.Blue.D
+                                        ImageNormal=GI,Bm.Buttons.18.Empty.Blue.N
+                                        ImageNormalA=GI,Bm.Buttons.18.Empty.Blue.A
+                                        ImageDisable=GI,Bm.Buttons.18.Empty.Blue.H
+                                        Name=scItem_button_3
+                                        Kind=Normal
+                                        KindHit=Rect
+                                        MouseBlocking=True
+                                        MouseBlockingTest=False
+                                        OnPressCode ~{
+                                            =ExecuteCodeFromString(GenerateCodeStringFromBlock('SC.Functions.AAItemPress'), 'index', 3);
+                                        }
+                                        Pos=6,6
+                                        Size=18,18
+                                        Style=Style.GB.SoundNormal
+                                    }
+                                }
+                            }
+                            Panel ~{
+                                Active=True
+                                Pos=0,140
+                                Size=250,30
+                                Name=scItem_4
+                                Label ~{
+                                    AlignX=Left
+                                    AlignY=CenterEx
+                                    Font=Font.1Small
+                                    Name=scItem_text_4
+                                    Pos=0,0
+                                    Size=150,30
+                                    Text=Описание настройки:
+                                    TextColor=255,255,255
+                                    WordWrap=True
+                                }
+                                Label ~{
+                                    AlignX=Right
+                                    AlignY=CenterEx
+                                    Font=Font.1Small
+                                    Name=scItem_value_4
+                                    Pos=100,0
+                                    Size=120,30
+                                    Text=---
+                                    TextColor=255,255,255
+                                    WordWrap=True
+                                }
+                                Panel ~{
+                                    Active=True
+                                    Pos=220,0
+                                    Size=30,30
+                                    GraphButton ~{
+                                        ImageDown=GI,Bm.Buttons.18.Empty.Blue.D
+                                        ImageNormal=GI,Bm.Buttons.18.Empty.Blue.N
+                                        ImageNormalA=GI,Bm.Buttons.18.Empty.Blue.A
+                                        ImageDisable=GI,Bm.Buttons.18.Empty.Blue.H
+                                        Name=scItem_button_4
+                                        Kind=Normal
+                                        KindHit=Rect
+                                        MouseBlocking=True
+                                        MouseBlockingTest=False
+                                        OnPressCode ~{
+                                            =ExecuteCodeFromString(GenerateCodeStringFromBlock('SC.Functions.AAItemPress'), 'index', 4);
+                                        }
+                                        Pos=6,6
+                                        Size=18,18
+                                        Style=Style.GB.SoundNormal
+                                    }
+                                }
+                            }
+                            Panel ~{
+                                Active=True
+                                Pos=0,175
+                                Size=250,30
+                                Name=scItem_5
+                                Label ~{
+                                    AlignX=Left
+                                    AlignY=CenterEx
+                                    Font=Font.1Small
+                                    Name=scItem_text_5
+                                    Pos=0,0
+                                    Size=150,30
+                                    Text=Описание настройки:
+                                    TextColor=255,255,255
+                                    WordWrap=True
+                                }
+                                Label ~{
+                                    AlignX=Right
+                                    AlignY=CenterEx
+                                    Font=Font.1Small
+                                    Name=scItem_value_5
+                                    Pos=100,0
+                                    Size=120,30
+                                    Text=---
+                                    TextColor=255,255,255
+                                    WordWrap=True
+                                }
+                                Panel ~{
+                                    Active=True
+                                    Pos=220,0
+                                    Size=30,30
+                                    GraphButton ~{
+                                        ImageDown=GI,Bm.Buttons.18.Empty.Blue.D
+                                        ImageNormal=GI,Bm.Buttons.18.Empty.Blue.N
+                                        ImageNormalA=GI,Bm.Buttons.18.Empty.Blue.A
+                                        ImageDisable=GI,Bm.Buttons.18.Empty.Blue.H
+                                        Name=scItem_button_5
+                                        Kind=Normal
+                                        KindHit=Rect
+                                        MouseBlocking=True
+                                        MouseBlockingTest=False
+                                        OnPressCode ~{
+                                            =ExecuteCodeFromString(GenerateCodeStringFromBlock('SC.Functions.AAItemPress'), 'index', 5);
+                                        }
+                                        Pos=6,6
+                                        Size=18,18
+                                        Style=Style.GB.SoundNormal
+                                    }
+                                }
+                            }
+                            Panel ~{
+                                Active=True
+                                Pos=0,210
+                                Size=250,30
+                                Name=scItem_6
+                                Label ~{
+                                    AlignX=Left
+                                    AlignY=CenterEx
+                                    Font=Font.1Small
+                                    Name=scItem_text_6
+                                    Pos=0,0
+                                    Size=150,30
+                                    Text=Описание настройки:
+                                    TextColor=255,255,255
+                                    WordWrap=True
+                                }
+                                Label ~{
+                                    AlignX=Right
+                                    AlignY=CenterEx
+                                    Font=Font.1Small
+                                    Name=scItem_value_6
+                                    Pos=100,0
+                                    Size=120,30
+                                    Text=---
+                                    TextColor=255,255,255
+                                    WordWrap=True
+                                }
+                                Panel ~{
+                                    Active=True
+                                    Pos=220,0
+                                    Size=30,30
+                                    GraphButton ~{
+                                        ImageDown=GI,Bm.Buttons.18.Empty.Blue.D
+                                        ImageNormal=GI,Bm.Buttons.18.Empty.Blue.N
+                                        ImageNormalA=GI,Bm.Buttons.18.Empty.Blue.A
+                                        ImageDisable=GI,Bm.Buttons.18.Empty.Blue.H
+                                        Name=scItem_button_6
+                                        Kind=Normal
+                                        KindHit=Rect
+                                        MouseBlocking=True
+                                        MouseBlockingTest=False
+                                        OnPressCode ~{
+                                            =ExecuteCodeFromString(GenerateCodeStringFromBlock('SC.Functions.AAItemPress'), 'index', 6);
+                                        }
+                                        Pos=6,6
+                                        Size=18,18
+                                        Style=Style.GB.SoundNormal
+                                    }
+                                }
+                            }
+                            Panel ~{
+                                Active=True
+                                Pos=0,245
+                                Size=250,30
+                                Name=scItem_7
+                                Label ~{
+                                    AlignX=Left
+                                    AlignY=CenterEx
+                                    Font=Font.1Small
+                                    Name=scItem_text_7
+                                    Pos=0,0
+                                    Size=150,30
+                                    Text=Описание настройки:
+                                    TextColor=255,255,255
+                                    WordWrap=True
+                                }
+                                Label ~{
+                                    AlignX=Right
+                                    AlignY=CenterEx
+                                    Font=Font.1Small
+                                    Name=scItem_value_7
+                                    Pos=100,0
+                                    Size=120,30
+                                    Text=---
+                                    TextColor=255,255,255
+                                    WordWrap=True
+                                }
+                                Panel ~{
+                                    Active=True
+                                    Pos=220,0
+                                    Size=30,30
+                                    GraphButton ~{
+                                        ImageDown=GI,Bm.Buttons.18.Empty.Blue.D
+                                        ImageNormal=GI,Bm.Buttons.18.Empty.Blue.N
+                                        ImageNormalA=GI,Bm.Buttons.18.Empty.Blue.A
+                                        ImageDisable=GI,Bm.Buttons.18.Empty.Blue.H
+                                        Name=scItem_button_7
+                                        Kind=Normal
+                                        KindHit=Rect
+                                        MouseBlocking=True
+                                        MouseBlockingTest=False
+                                        OnPressCode ~{
+                                            =ExecuteCodeFromString(GenerateCodeStringFromBlock('SC.Functions.AAItemPress'), 'index', 7);
+                                        }
+                                        Pos=6,6
+                                        Size=18,18
+                                        Style=Style.GB.SoundNormal
+                                    }
+                                }
+                            }
+                            Panel ~{
+                                Active=True
+                                Pos=0,280
+                                Size=250,30
+                                Name=scItem_8
+                                Label ~{
+                                    AlignX=Left
+                                    AlignY=CenterEx
+                                    Font=Font.1Small
+                                    Name=scItem_text_8
+                                    Pos=0,0
+                                    Size=150,30
+                                    Text=Описание настройки:
+                                    TextColor=255,255,255
+                                    WordWrap=True
+                                }
+                                Label ~{
+                                    AlignX=Right
+                                    AlignY=CenterEx
+                                    Font=Font.1Small
+                                    Name=scItem_value_8
+                                    Pos=100,0
+                                    Size=120,30
+                                    Text=---
+                                    TextColor=255,255,255
+                                    WordWrap=True
+                                }
+                                Panel ~{
+                                    Active=True
+                                    Pos=220,0
+                                    Size=30,30
+                                    GraphButton ~{
+                                        ImageDown=GI,Bm.Buttons.18.Empty.Blue.D
+                                        ImageNormal=GI,Bm.Buttons.18.Empty.Blue.N
+                                        ImageNormalA=GI,Bm.Buttons.18.Empty.Blue.A
+                                        ImageDisable=GI,Bm.Buttons.18.Empty.Blue.H
+                                        Name=scItem_button_8
+                                        Kind=Normal
+                                        KindHit=Rect
+                                        MouseBlocking=True
+                                        MouseBlockingTest=False
+                                        OnPressCode ~{
+                                            =ExecuteCodeFromString(GenerateCodeStringFromBlock('SC.Functions.AAItemPress'), 'index', 8);
+                                        }
+                                        Pos=6,6
+                                        Size=18,18
+                                        Style=Style.GB.SoundNormal
+                                    }
+                                }
+                            }
+                            Panel ~{
+                                Active=True
+                                Pos=0,315
+                                Size=250,30
+                                Name=scItem_9
+                                Label ~{
+                                    AlignX=Left
+                                    AlignY=CenterEx
+                                    Font=Font.1Small
+                                    Name=scItem_text_9
+                                    Pos=0,0
+                                    Size=150,30
+                                    Text=Описание настройки:
+                                    TextColor=255,255,255
+                                    WordWrap=True
+                                }
+                                Label ~{
+                                    AlignX=Right
+                                    AlignY=CenterEx
+                                    Font=Font.1Small
+                                    Name=scItem_value_9
+                                    Pos=100,0
+                                    Size=120,30
+                                    Text=---
+                                    TextColor=255,255,255
+                                    WordWrap=True
+                                }
+                                Panel ~{
+                                    Active=True
+                                    Pos=220,0
+                                    Size=30,30
+                                    GraphButton ~{
+                                        ImageDown=GI,Bm.Buttons.18.Empty.Blue.D
+                                        ImageNormal=GI,Bm.Buttons.18.Empty.Blue.N
+                                        ImageNormalA=GI,Bm.Buttons.18.Empty.Blue.A
+                                        ImageDisable=GI,Bm.Buttons.18.Empty.Blue.H
+                                        Name=scItem_button_9
+                                        Kind=Normal
+                                        KindHit=Rect
+                                        MouseBlocking=True
+                                        MouseBlockingTest=False
+                                        OnPressCode ~{
+                                            =ExecuteCodeFromString(GenerateCodeStringFromBlock('SC.Functions.AAItemPress'), 'index', 9);
+                                        }
+                                        Pos=6,6
+                                        Size=18,18
+                                        Style=Style.GB.SoundNormal
+                                    }
+                                }
+                            }
+                            Panel ~{
+                                Active=True
+                                Pos=0,350
+                                Size=250,30
+                                Name=scItem_10
+                                Label ~{
+                                    AlignX=Left
+                                    AlignY=CenterEx
+                                    Font=Font.1Small
+                                    Name=scItem_text_10
+                                    Pos=0,0
+                                    Size=150,30
+                                    Text=Описание настройки:
+                                    TextColor=255,255,255
+                                    WordWrap=True
+                                }
+                                Label ~{
+                                    AlignX=Right
+                                    AlignY=CenterEx
+                                    Font=Font.1Small
+                                    Name=scItem_value_10
+                                    Pos=100,0
+                                    Size=120,30
+                                    Text=---
+                                    TextColor=255,255,255
+                                    WordWrap=True
+                                }
+                                Panel ~{
+                                    Active=True
+                                    Pos=220,0
+                                    Size=30,30
+                                    GraphButton ~{
+                                        ImageDown=GI,Bm.Buttons.18.Empty.Blue.D
+                                        ImageNormal=GI,Bm.Buttons.18.Empty.Blue.N
+                                        ImageNormalA=GI,Bm.Buttons.18.Empty.Blue.A
+                                        ImageDisable=GI,Bm.Buttons.18.Empty.Blue.H
+                                        Name=scItem_button_10
+                                        Kind=Normal
+                                        KindHit=Rect
+                                        MouseBlocking=True
+                                        MouseBlockingTest=False
+                                        OnPressCode ~{
+                                            =ExecuteCodeFromString(GenerateCodeStringFromBlock('SC.Functions.AAItemPress'), 'index', 10);
+                                        }
+                                        Pos=6,6
+                                        Size=18,18
+                                        Style=Style.GB.SoundNormal
+                                    }
+                                }
+                            }
+                            Panel ~{
+                                Active=True
+                                Pos=0,385
+                                Size=250,30
+                                Name=scItem_11
+                                Label ~{
+                                    AlignX=Left
+                                    AlignY=CenterEx
+                                    Font=Font.1Small
+                                    Name=scItem_text_11
+                                    Pos=0,0
+                                    Size=150,30
+                                    Text=Описание настройки:
+                                    TextColor=255,255,255
+                                    WordWrap=True
+                                }
+                                Label ~{
+                                    AlignX=Right
+                                    AlignY=CenterEx
+                                    Font=Font.1Small
+                                    Name=scItem_value_11
+                                    Pos=100,0
+                                    Size=120,30
+                                    Text=---
+                                    TextColor=255,255,255
+                                    WordWrap=True
+                                }
+                                Panel ~{
+                                    Active=True
+                                    Pos=220,0
+                                    Size=30,30
+                                    GraphButton ~{
+                                        ImageDown=GI,Bm.Buttons.18.Empty.Blue.D
+                                        ImageNormal=GI,Bm.Buttons.18.Empty.Blue.N
+                                        ImageNormalA=GI,Bm.Buttons.18.Empty.Blue.A
+                                        ImageDisable=GI,Bm.Buttons.18.Empty.Blue.H
+                                        Name=scItem_button_11
+                                        Kind=Normal
+                                        KindHit=Rect
+                                        MouseBlocking=True
+                                        MouseBlockingTest=False
+                                        OnPressCode ~{
+                                            =ExecuteCodeFromString(GenerateCodeStringFromBlock('SC.Functions.AAItemPress'), 'index', 11);
+                                        }
+                                        Pos=6,6
+                                        Size=18,18
+                                        Style=Style.GB.SoundNormal
+                                    }
+                                }
+                            }
+                            Panel ~{
+                                Active=True
+                                Pos=0,420
+                                Size=250,30
+                                Name=scItem_12
+                                Label ~{
+                                    AlignX=Left
+                                    AlignY=CenterEx
+                                    Font=Font.1Small
+                                    Name=scItem_text_12
+                                    Pos=0,0
+                                    Size=150,30
+                                    Text=Описание настройки:
+                                    TextColor=255,255,255
+                                    WordWrap=True
+                                }
+                                Label ~{
+                                    AlignX=Right
+                                    AlignY=CenterEx
+                                    Font=Font.1Small
+                                    Name=scItem_value_12
+                                    Pos=100,0
+                                    Size=120,30
+                                    Text=---
+                                    TextColor=255,255,255
+                                    WordWrap=True
+                                }
+                                Panel ~{
+                                    Active=True
+                                    Pos=220,0
+                                    Size=30,30
+                                    GraphButton ~{
+                                        ImageDown=GI,Bm.Buttons.18.Empty.Blue.D
+                                        ImageNormal=GI,Bm.Buttons.18.Empty.Blue.N
+                                        ImageNormalA=GI,Bm.Buttons.18.Empty.Blue.A
+                                        ImageDisable=GI,Bm.Buttons.18.Empty.Blue.H
+                                        Name=scItem_button_12
+                                        Kind=Normal
+                                        KindHit=Rect
+                                        MouseBlocking=True
+                                        MouseBlockingTest=False
+                                        OnPressCode ~{
+                                            =ExecuteCodeFromString(GenerateCodeStringFromBlock('SC.Functions.AAItemPress'), 'index', 12);
+                                        }
+                                        Pos=6,6
+                                        Size=18,18
+                                        Style=Style.GB.SoundNormal
+                                    }
+                                }
+                            }
+                            Panel ~{
+                                Active=True
+                                Pos=260,0
+                                Size=250,30
+                                Name=scItem_13
+                                Label ~{
+                                    AlignX=Left
+                                    AlignY=CenterEx
+                                    Font=Font.1Small
+                                    Name=scItem_text_13
+                                    Pos=0,0
+                                    Size=150,30
+                                    Text=Описание настройки:
+                                    TextColor=255,255,255
+                                    WordWrap=True
+                                }
+                                Label ~{
+                                    AlignX=Right
+                                    AlignY=CenterEx
+                                    Font=Font.1Small
+                                    Name=scItem_value_13
+                                    Pos=100,0
+                                    Size=120,30
+                                    Text=---
+                                    TextColor=255,255,255
+                                    WordWrap=True
+                                }
+                                Panel ~{
+                                    Active=True
+                                    Pos=220,0
+                                    Size=30,30
+                                    GraphButton ~{
+                                        ImageDown=GI,Bm.Buttons.18.Empty.Blue.D
+                                        ImageNormal=GI,Bm.Buttons.18.Empty.Blue.N
+                                        ImageNormalA=GI,Bm.Buttons.18.Empty.Blue.A
+                                        ImageDisable=GI,Bm.Buttons.18.Empty.Blue.H
+                                        Name=scItem_button_13
+                                        Kind=Normal
+                                        KindHit=Rect
+                                        MouseBlocking=True
+                                        MouseBlockingTest=False
+                                        OnPressCode ~{
+                                            =ExecuteCodeFromString(GenerateCodeStringFromBlock('SC.Functions.AAItemPress'), 'index', 13);
+                                        }
+                                        Pos=6,6
+                                        Size=18,18
+                                        Style=Style.GB.SoundNormal
+                                    }
+                                }
+                            }
+                            Panel ~{
+                                Active=True
+                                Pos=260,35
+                                Size=250,30
+                                Name=scItem_14
+                                Label ~{
+                                    AlignX=Left
+                                    AlignY=CenterEx
+                                    Font=Font.1Small
+                                    Name=scItem_text_14
+                                    Pos=0,0
+                                    Size=150,30
+                                    Text=Описание настройки:
+                                    TextColor=255,255,255
+                                    WordWrap=True
+                                }
+                                Label ~{
+                                    AlignX=Right
+                                    AlignY=CenterEx
+                                    Font=Font.1Small
+                                    Name=scItem_value_14
+                                    Pos=100,0
+                                    Size=120,30
+                                    Text=---
+                                    TextColor=255,255,255
+                                    WordWrap=True
+                                }
+                                Panel ~{
+                                    Active=True
+                                    Pos=220,0
+                                    Size=30,30
+                                    GraphButton ~{
+                                        ImageDown=GI,Bm.Buttons.18.Empty.Blue.D
+                                        ImageNormal=GI,Bm.Buttons.18.Empty.Blue.N
+                                        ImageNormalA=GI,Bm.Buttons.18.Empty.Blue.A
+                                        ImageDisable=GI,Bm.Buttons.18.Empty.Blue.H
+                                        Name=scItem_button_14
+                                        Kind=Normal
+                                        KindHit=Rect
+                                        MouseBlocking=True
+                                        MouseBlockingTest=False
+                                        OnPressCode ~{
+                                            =ExecuteCodeFromString(GenerateCodeStringFromBlock('SC.Functions.AAItemPress'), 'index', 14);
+                                        }
+                                        Pos=6,6
+                                        Size=18,18
+                                        Style=Style.GB.SoundNormal
+                                    }
+                                }
+                            }
+                            Panel ~{
+                                Active=True
+                                Pos=260,70
+                                Size=250,30
+                                Name=scItem_15
+                                Label ~{
+                                    AlignX=Left
+                                    AlignY=CenterEx
+                                    Font=Font.1Small
+                                    Name=scItem_text_15
+                                    Pos=0,0
+                                    Size=150,30
+                                    Text=Описание настройки:
+                                    TextColor=255,255,255
+                                    WordWrap=True
+                                }
+                                Label ~{
+                                    AlignX=Right
+                                    AlignY=CenterEx
+                                    Font=Font.1Small
+                                    Name=scItem_value_15
+                                    Pos=100,0
+                                    Size=120,30
+                                    Text=---
+                                    TextColor=255,255,255
+                                    WordWrap=True
+                                }
+                                Panel ~{
+                                    Active=True
+                                    Pos=220,0
+                                    Size=30,30
+                                    GraphButton ~{
+                                        ImageDown=GI,Bm.Buttons.18.Empty.Blue.D
+                                        ImageNormal=GI,Bm.Buttons.18.Empty.Blue.N
+                                        ImageNormalA=GI,Bm.Buttons.18.Empty.Blue.A
+                                        ImageDisable=GI,Bm.Buttons.18.Empty.Blue.H
+                                        Name=scItem_button_15
+                                        Kind=Normal
+                                        KindHit=Rect
+                                        MouseBlocking=True
+                                        MouseBlockingTest=False
+                                        OnPressCode ~{
+                                            =ExecuteCodeFromString(GenerateCodeStringFromBlock('SC.Functions.AAItemPress'), 'index', 15);
+                                        }
+                                        Pos=6,6
+                                        Size=18,18
+                                        Style=Style.GB.SoundNormal
+                                    }
+                                }
+                            }
+                            Panel ~{
+                                Active=True
+                                Pos=260,105
+                                Size=250,30
+                                Name=scItem_16
+                                Label ~{
+                                    AlignX=Left
+                                    AlignY=CenterEx
+                                    Font=Font.1Small
+                                    Name=scItem_text_16
+                                    Pos=0,0
+                                    Size=150,30
+                                    Text=Описание настройки:
+                                    TextColor=255,255,255
+                                    WordWrap=True
+                                }
+                                Label ~{
+                                    AlignX=Right
+                                    AlignY=CenterEx
+                                    Font=Font.1Small
+                                    Name=scItem_value_16
+                                    Pos=100,0
+                                    Size=120,30
+                                    Text=---
+                                    TextColor=255,255,255
+                                    WordWrap=True
+                                }
+                                Panel ~{
+                                    Active=True
+                                    Pos=220,0
+                                    Size=30,30
+                                    GraphButton ~{
+                                        ImageDown=GI,Bm.Buttons.18.Empty.Blue.D
+                                        ImageNormal=GI,Bm.Buttons.18.Empty.Blue.N
+                                        ImageNormalA=GI,Bm.Buttons.18.Empty.Blue.A
+                                        ImageDisable=GI,Bm.Buttons.18.Empty.Blue.H
+                                        Name=scItem_button_16
+                                        Kind=Normal
+                                        KindHit=Rect
+                                        MouseBlocking=True
+                                        MouseBlockingTest=False
+                                        OnPressCode ~{
+                                            =ExecuteCodeFromString(GenerateCodeStringFromBlock('SC.Functions.AAItemPress'), 'index', 16);
+                                        }
+                                        Pos=6,6
+                                        Size=18,18
+                                        Style=Style.GB.SoundNormal
+                                    }
+                                }
+                            }
+                            Panel ~{
+                                Active=True
+                                Pos=260,140
+                                Size=250,30
+                                Name=scItem_17
+                                Label ~{
+                                    AlignX=Left
+                                    AlignY=CenterEx
+                                    Font=Font.1Small
+                                    Name=scItem_text_17
+                                    Pos=0,0
+                                    Size=150,30
+                                    Text=Описание настройки:
+                                    TextColor=255,255,255
+                                    WordWrap=True
+                                }
+                                Label ~{
+                                    AlignX=Right
+                                    AlignY=CenterEx
+                                    Font=Font.1Small
+                                    Name=scItem_value_17
+                                    Pos=100,0
+                                    Size=120,30
+                                    Text=---
+                                    TextColor=255,255,255
+                                    WordWrap=True
+                                }
+                                Panel ~{
+                                    Active=True
+                                    Pos=220,0
+                                    Size=30,30
+                                    GraphButton ~{
+                                        ImageDown=GI,Bm.Buttons.18.Empty.Blue.D
+                                        ImageNormal=GI,Bm.Buttons.18.Empty.Blue.N
+                                        ImageNormalA=GI,Bm.Buttons.18.Empty.Blue.A
+                                        ImageDisable=GI,Bm.Buttons.18.Empty.Blue.H
+                                        Name=scItem_button_17
+                                        Kind=Normal
+                                        KindHit=Rect
+                                        MouseBlocking=True
+                                        MouseBlockingTest=False
+                                        OnPressCode ~{
+                                            =ExecuteCodeFromString(GenerateCodeStringFromBlock('SC.Functions.AAItemPress'), 'index', 17);
+                                        }
+                                        Pos=6,6
+                                        Size=18,18
+                                        Style=Style.GB.SoundNormal
+                                    }
+                                }
+                            }
+                            Panel ~{
+                                Active=True
+                                Pos=260,175
+                                Size=250,30
+                                Name=scItem_18
+                                Label ~{
+                                    AlignX=Left
+                                    AlignY=CenterEx
+                                    Font=Font.1Small
+                                    Name=scItem_text_18
+                                    Pos=0,0
+                                    Size=150,30
+                                    Text=Описание настройки:
+                                    TextColor=255,255,255
+                                    WordWrap=True
+                                }
+                                Label ~{
+                                    AlignX=Right
+                                    AlignY=CenterEx
+                                    Font=Font.1Small
+                                    Name=scItem_value_18
+                                    Pos=100,0
+                                    Size=120,30
+                                    Text=---
+                                    TextColor=255,255,255
+                                    WordWrap=True
+                                }
+                                Panel ~{
+                                    Active=True
+                                    Pos=220,0
+                                    Size=30,30
+                                    GraphButton ~{
+                                        ImageDown=GI,Bm.Buttons.18.Empty.Blue.D
+                                        ImageNormal=GI,Bm.Buttons.18.Empty.Blue.N
+                                        ImageNormalA=GI,Bm.Buttons.18.Empty.Blue.A
+                                        ImageDisable=GI,Bm.Buttons.18.Empty.Blue.H
+                                        Name=scItem_button_18
+                                        Kind=Normal
+                                        KindHit=Rect
+                                        MouseBlocking=True
+                                        MouseBlockingTest=False
+                                        OnPressCode ~{
+                                            =ExecuteCodeFromString(GenerateCodeStringFromBlock('SC.Functions.AAItemPress'), 'index', 18);
+                                        }
+                                        Pos=6,6
+                                        Size=18,18
+                                        Style=Style.GB.SoundNormal
+                                    }
+                                }
+                            }
+                            Panel ~{
+                                Active=True
+                                Pos=260,210
+                                Size=250,30
+                                Name=scItem_19
+                                Label ~{
+                                    AlignX=Left
+                                    AlignY=CenterEx
+                                    Font=Font.1Small
+                                    Name=scItem_text_19
+                                    Pos=0,0
+                                    Size=150,30
+                                    Text=Описание настройки:
+                                    TextColor=255,255,255
+                                    WordWrap=True
+                                }
+                                Label ~{
+                                    AlignX=Right
+                                    AlignY=CenterEx
+                                    Font=Font.1Small
+                                    Name=scItem_value_19
+                                    Pos=100,0
+                                    Size=120,30
+                                    Text=---
+                                    TextColor=255,255,255
+                                    WordWrap=True
+                                }
+                                Panel ~{
+                                    Active=True
+                                    Pos=220,0
+                                    Size=30,30
+                                    GraphButton ~{
+                                        ImageDown=GI,Bm.Buttons.18.Empty.Blue.D
+                                        ImageNormal=GI,Bm.Buttons.18.Empty.Blue.N
+                                        ImageNormalA=GI,Bm.Buttons.18.Empty.Blue.A
+                                        ImageDisable=GI,Bm.Buttons.18.Empty.Blue.H
+                                        Name=scItem_button_19
+                                        Kind=Normal
+                                        KindHit=Rect
+                                        MouseBlocking=True
+                                        MouseBlockingTest=False
+                                        OnPressCode ~{
+                                            =ExecuteCodeFromString(GenerateCodeStringFromBlock('SC.Functions.AAItemPress'), 'index', 19);
+                                        }
+                                        Pos=6,6
+                                        Size=18,18
+                                        Style=Style.GB.SoundNormal
+                                    }
+                                }
+                            }
+                            Panel ~{
+                                Active=True
+                                Pos=260,245
+                                Size=250,30
+                                Name=scItem_20
+                                Label ~{
+                                    AlignX=Left
+                                    AlignY=CenterEx
+                                    Font=Font.1Small
+                                    Name=scItem_text_20
+                                    Pos=0,0
+                                    Size=150,30
+                                    Text=Описание настройки:
+                                    TextColor=255,255,255
+                                    WordWrap=True
+                                }
+                                Label ~{
+                                    AlignX=Right
+                                    AlignY=CenterEx
+                                    Font=Font.1Small
+                                    Name=scItem_value_20
+                                    Pos=100,0
+                                    Size=120,30
+                                    Text=---
+                                    TextColor=255,255,255
+                                    WordWrap=True
+                                }
+                                Panel ~{
+                                    Active=True
+                                    Pos=220,0
+                                    Size=30,30
+                                    GraphButton ~{
+                                        ImageDown=GI,Bm.Buttons.18.Empty.Blue.D
+                                        ImageNormal=GI,Bm.Buttons.18.Empty.Blue.N
+                                        ImageNormalA=GI,Bm.Buttons.18.Empty.Blue.A
+                                        ImageDisable=GI,Bm.Buttons.18.Empty.Blue.H
+                                        Name=scItem_button_20
+                                        Kind=Normal
+                                        KindHit=Rect
+                                        MouseBlocking=True
+                                        MouseBlockingTest=False
+                                        OnPressCode ~{
+                                            =ExecuteCodeFromString(GenerateCodeStringFromBlock('SC.Functions.AAItemPress'), 'index', 20);
+                                        }
+                                        Pos=6,6
+                                        Size=18,18
+                                        Style=Style.GB.SoundNormal
+                                    }
+                                }
+                            }
+                            Panel ~{
+                                Active=True
+                                Pos=260,280
+                                Size=250,30
+                                Name=scItem_21
+                                Label ~{
+                                    AlignX=Left
+                                    AlignY=CenterEx
+                                    Font=Font.1Small
+                                    Name=scItem_text_21
+                                    Pos=0,0
+                                    Size=150,30
+                                    Text=Описание настройки:
+                                    TextColor=255,255,255
+                                    WordWrap=True
+                                }
+                                Label ~{
+                                    AlignX=Right
+                                    AlignY=CenterEx
+                                    Font=Font.1Small
+                                    Name=scItem_value_21
+                                    Pos=100,0
+                                    Size=120,30
+                                    Text=---
+                                    TextColor=255,255,255
+                                    WordWrap=True
+                                }
+                                Panel ~{
+                                    Active=True
+                                    Pos=220,0
+                                    Size=30,30
+                                    GraphButton ~{
+                                        ImageDown=GI,Bm.Buttons.18.Empty.Blue.D
+                                        ImageNormal=GI,Bm.Buttons.18.Empty.Blue.N
+                                        ImageNormalA=GI,Bm.Buttons.18.Empty.Blue.A
+                                        ImageDisable=GI,Bm.Buttons.18.Empty.Blue.H
+                                        Name=scItem_button_21
+                                        Kind=Normal
+                                        KindHit=Rect
+                                        MouseBlocking=True
+                                        MouseBlockingTest=False
+                                        OnPressCode ~{
+                                            =ExecuteCodeFromString(GenerateCodeStringFromBlock('SC.Functions.AAItemPress'), 'index', 21);
+                                        }
+                                        Pos=6,6
+                                        Size=18,18
+                                        Style=Style.GB.SoundNormal
+                                    }
+                                }
+                            }
+                            Panel ~{
+                                Active=True
+                                Pos=260,315
+                                Size=250,30
+                                Name=scItem_22
+                                Label ~{
+                                    AlignX=Left
+                                    AlignY=CenterEx
+                                    Font=Font.1Small
+                                    Name=scItem_text_22
+                                    Pos=0,0
+                                    Size=150,30
+                                    Text=Описание настройки:
+                                    TextColor=255,255,255
+                                    WordWrap=True
+                                }
+                                Label ~{
+                                    AlignX=Right
+                                    AlignY=CenterEx
+                                    Font=Font.1Small
+                                    Name=scItem_value_22
+                                    Pos=100,0
+                                    Size=120,30
+                                    Text=---
+                                    TextColor=255,255,255
+                                    WordWrap=True
+                                }
+                                Panel ~{
+                                    Active=True
+                                    Pos=220,0
+                                    Size=30,30
+                                    GraphButton ~{
+                                        ImageDown=GI,Bm.Buttons.18.Empty.Blue.D
+                                        ImageNormal=GI,Bm.Buttons.18.Empty.Blue.N
+                                        ImageNormalA=GI,Bm.Buttons.18.Empty.Blue.A
+                                        ImageDisable=GI,Bm.Buttons.18.Empty.Blue.H
+                                        Name=scItem_button_22
+                                        Kind=Normal
+                                        KindHit=Rect
+                                        MouseBlocking=True
+                                        MouseBlockingTest=False
+                                        OnPressCode ~{
+                                            =ExecuteCodeFromString(GenerateCodeStringFromBlock('SC.Functions.AAItemPress'), 'index', 22);
+                                        }
+                                        Pos=6,6
+                                        Size=18,18
+                                        Style=Style.GB.SoundNormal
+                                    }
+                                }
+                            }
+                            Panel ~{
+                                Active=True
+                                Pos=260,350
+                                Size=250,30
+                                Name=scItem_23
+                                Label ~{
+                                    AlignX=Left
+                                    AlignY=CenterEx
+                                    Font=Font.1Small
+                                    Name=scItem_text_23
+                                    Pos=0,0
+                                    Size=150,30
+                                    Text=Описание настройки:
+                                    TextColor=255,255,255
+                                    WordWrap=True
+                                }
+                                Label ~{
+                                    AlignX=Right
+                                    AlignY=CenterEx
+                                    Font=Font.1Small
+                                    Name=scItem_value_23
+                                    Pos=100,0
+                                    Size=120,30
+                                    Text=---
+                                    TextColor=255,255,255
+                                    WordWrap=True
+                                }
+                                Panel ~{
+                                    Active=True
+                                    Pos=220,0
+                                    Size=30,30
+                                    GraphButton ~{
+                                        ImageDown=GI,Bm.Buttons.18.Empty.Blue.D
+                                        ImageNormal=GI,Bm.Buttons.18.Empty.Blue.N
+                                        ImageNormalA=GI,Bm.Buttons.18.Empty.Blue.A
+                                        ImageDisable=GI,Bm.Buttons.18.Empty.Blue.H
+                                        Name=scItem_button_23
+                                        Kind=Normal
+                                        KindHit=Rect
+                                        MouseBlocking=True
+                                        MouseBlockingTest=False
+                                        OnPressCode ~{
+                                            =ExecuteCodeFromString(GenerateCodeStringFromBlock('SC.Functions.AAItemPress'), 'index', 23);
+                                        }
+                                        Pos=6,6
+                                        Size=18,18
+                                        Style=Style.GB.SoundNormal
+                                    }
+                                }
+                            }
+                            Panel ~{
+                                Active=True
+                                Pos=260,385
+                                Size=250,30
+                                Name=scItem_24
+                                Label ~{
+                                    AlignX=Left
+                                    AlignY=CenterEx
+                                    Font=Font.1Small
+                                    Name=scItem_text_24
+                                    Pos=0,0
+                                    Size=150,30
+                                    Text=Описание настройки:
+                                    TextColor=255,255,255
+                                    WordWrap=True
+                                }
+                                Label ~{
+                                    AlignX=Right
+                                    AlignY=CenterEx
+                                    Font=Font.1Small
+                                    Name=scItem_value_24
+                                    Pos=100,0
+                                    Size=120,30
+                                    Text=---
+                                    TextColor=255,255,255
+                                    WordWrap=True
+                                }
+                                Panel ~{
+                                    Active=True
+                                    Pos=220,0
+                                    Size=30,30
+                                    GraphButton ~{
+                                        ImageDown=GI,Bm.Buttons.18.Empty.Blue.D
+                                        ImageNormal=GI,Bm.Buttons.18.Empty.Blue.N
+                                        ImageNormalA=GI,Bm.Buttons.18.Empty.Blue.A
+                                        ImageDisable=GI,Bm.Buttons.18.Empty.Blue.H
+                                        Name=scItem_button_24
+                                        Kind=Normal
+                                        KindHit=Rect
+                                        MouseBlocking=True
+                                        MouseBlockingTest=False
+                                        OnPressCode ~{
+                                            =ExecuteCodeFromString(GenerateCodeStringFromBlock('SC.Functions.AAItemPress'), 'index', 24);
+                                        }
+                                        Pos=6,6
+                                        Size=18,18
+                                        Style=Style.GB.SoundNormal
+                                    }
+                                }
+                            }
+                            Panel ~{
+                                Active=True
+                                Pos=260,420
+                                Size=250,30
+                                Name=scItem_25
+                                Label ~{
+                                    AlignX=Left
+                                    AlignY=CenterEx
+                                    Font=Font.1Small
+                                    Name=scItem_text_25
+                                    Pos=0,0
+                                    Size=150,30
+                                    Text=Описание настройки:
+                                    TextColor=255,255,255
+                                    WordWrap=True
+                                }
+                                Label ~{
+                                    AlignX=Right
+                                    AlignY=CenterEx
+                                    Font=Font.1Small
+                                    Name=scItem_value_25
+                                    Pos=100,0
+                                    Size=120,30
+                                    Text=---
+                                    TextColor=255,255,255
+                                    WordWrap=True
+                                }
+                                Panel ~{
+                                    Active=True
+                                    Pos=220,0
+                                    Size=30,30
+                                    GraphButton ~{
+                                        ImageDown=GI,Bm.Buttons.18.Empty.Blue.D
+                                        ImageNormal=GI,Bm.Buttons.18.Empty.Blue.N
+                                        ImageNormalA=GI,Bm.Buttons.18.Empty.Blue.A
+                                        ImageDisable=GI,Bm.Buttons.18.Empty.Blue.H
+                                        Name=scItem_button_25
+                                        Kind=Normal
+                                        KindHit=Rect
+                                        MouseBlocking=True
+                                        MouseBlockingTest=False
+                                        OnPressCode ~{
+                                            =ExecuteCodeFromString(GenerateCodeStringFromBlock('SC.Functions.AAItemPress'), 'index', 25);
+                                        }
+                                        Pos=6,6
+                                        Size=18,18
+                                        Style=Style.GB.SoundNormal
+                                    }
+                                }
+                            }
+                            Panel ~{
+                                Active=True
+                                Pos=520,0
+                                Size=250,30
+                                Name=scItem_26
+                                Label ~{
+                                    AlignX=Left
+                                    AlignY=CenterEx
+                                    Font=Font.1Small
+                                    Name=scItem_text_26
+                                    Pos=0,0
+                                    Size=150,30
+                                    Text=Описание настройки:
+                                    TextColor=255,255,255
+                                    WordWrap=True
+                                }
+                                Label ~{
+                                    AlignX=Right
+                                    AlignY=CenterEx
+                                    Font=Font.1Small
+                                    Name=scItem_value_26
+                                    Pos=100,0
+                                    Size=120,30
+                                    Text=---
+                                    TextColor=255,255,255
+                                    WordWrap=True
+                                }
+                                Panel ~{
+                                    Active=True
+                                    Pos=220,0
+                                    Size=30,30
+                                    GraphButton ~{
+                                        ImageDown=GI,Bm.Buttons.18.Empty.Blue.D
+                                        ImageNormal=GI,Bm.Buttons.18.Empty.Blue.N
+                                        ImageNormalA=GI,Bm.Buttons.18.Empty.Blue.A
+                                        ImageDisable=GI,Bm.Buttons.18.Empty.Blue.H
+                                        Name=scItem_button_26
+                                        Kind=Normal
+                                        KindHit=Rect
+                                        MouseBlocking=True
+                                        MouseBlockingTest=False
+                                        OnPressCode ~{
+                                            =ExecuteCodeFromString(GenerateCodeStringFromBlock('SC.Functions.AAItemPress'), 'index', 26);
+                                        }
+                                        Pos=6,6
+                                        Size=18,18
+                                        Style=Style.GB.SoundNormal
+                                    }
+                                }
+                            }
+                            Panel ~{
+                                Active=True
+                                Pos=520,35
+                                Size=250,30
+                                Name=scItem_27
+                                Label ~{
+                                    AlignX=Left
+                                    AlignY=CenterEx
+                                    Font=Font.1Small
+                                    Name=scItem_text_27
+                                    Pos=0,0
+                                    Size=150,30
+                                    Text=Описание настройки:
+                                    TextColor=255,255,255
+                                    WordWrap=True
+                                }
+                                Label ~{
+                                    AlignX=Right
+                                    AlignY=CenterEx
+                                    Font=Font.1Small
+                                    Name=scItem_value_27
+                                    Pos=100,0
+                                    Size=120,30
+                                    Text=---
+                                    TextColor=255,255,255
+                                    WordWrap=True
+                                }
+                                Panel ~{
+                                    Active=True
+                                    Pos=220,0
+                                    Size=30,30
+                                    GraphButton ~{
+                                        ImageDown=GI,Bm.Buttons.18.Empty.Blue.D
+                                        ImageNormal=GI,Bm.Buttons.18.Empty.Blue.N
+                                        ImageNormalA=GI,Bm.Buttons.18.Empty.Blue.A
+                                        ImageDisable=GI,Bm.Buttons.18.Empty.Blue.H
+                                        Name=scItem_button_27
+                                        Kind=Normal
+                                        KindHit=Rect
+                                        MouseBlocking=True
+                                        MouseBlockingTest=False
+                                        OnPressCode ~{
+                                            =ExecuteCodeFromString(GenerateCodeStringFromBlock('SC.Functions.AAItemPress'), 'index', 27);
+                                        }
+                                        Pos=6,6
+                                        Size=18,18
+                                        Style=Style.GB.SoundNormal
+                                    }
+                                }
+                            }
+                            Panel ~{
+                                Active=True
+                                Pos=520,70
+                                Size=250,30
+                                Name=scItem_28
+                                Label ~{
+                                    AlignX=Left
+                                    AlignY=CenterEx
+                                    Font=Font.1Small
+                                    Name=scItem_text_28
+                                    Pos=0,0
+                                    Size=150,30
+                                    Text=Описание настройки:
+                                    TextColor=255,255,255
+                                    WordWrap=True
+                                }
+                                Label ~{
+                                    AlignX=Right
+                                    AlignY=CenterEx
+                                    Font=Font.1Small
+                                    Name=scItem_value_28
+                                    Pos=100,0
+                                    Size=120,30
+                                    Text=---
+                                    TextColor=255,255,255
+                                    WordWrap=True
+                                }
+                                Panel ~{
+                                    Active=True
+                                    Pos=220,0
+                                    Size=30,30
+                                    GraphButton ~{
+                                        ImageDown=GI,Bm.Buttons.18.Empty.Blue.D
+                                        ImageNormal=GI,Bm.Buttons.18.Empty.Blue.N
+                                        ImageNormalA=GI,Bm.Buttons.18.Empty.Blue.A
+                                        ImageDisable=GI,Bm.Buttons.18.Empty.Blue.H
+                                        Name=scItem_button_28
+                                        Kind=Normal
+                                        KindHit=Rect
+                                        MouseBlocking=True
+                                        MouseBlockingTest=False
+                                        OnPressCode ~{
+                                            =ExecuteCodeFromString(GenerateCodeStringFromBlock('SC.Functions.AAItemPress'), 'index', 28);
+                                        }
+                                        Pos=6,6
+                                        Size=18,18
+                                        Style=Style.GB.SoundNormal
+                                    }
+                                }
+                            }
+                            Panel ~{
+                                Active=True
+                                Pos=520,105
+                                Size=250,30
+                                Name=scItem_29
+                                Label ~{
+                                    AlignX=Left
+                                    AlignY=CenterEx
+                                    Font=Font.1Small
+                                    Name=scItem_text_29
+                                    Pos=0,0
+                                    Size=150,30
+                                    Text=Описание настройки:
+                                    TextColor=255,255,255
+                                    WordWrap=True
+                                }
+                                Label ~{
+                                    AlignX=Right
+                                    AlignY=CenterEx
+                                    Font=Font.1Small
+                                    Name=scItem_value_29
+                                    Pos=100,0
+                                    Size=120,30
+                                    Text=---
+                                    TextColor=255,255,255
+                                    WordWrap=True
+                                }
+                                Panel ~{
+                                    Active=True
+                                    Pos=220,0
+                                    Size=30,30
+                                    GraphButton ~{
+                                        ImageDown=GI,Bm.Buttons.18.Empty.Blue.D
+                                        ImageNormal=GI,Bm.Buttons.18.Empty.Blue.N
+                                        ImageNormalA=GI,Bm.Buttons.18.Empty.Blue.A
+                                        ImageDisable=GI,Bm.Buttons.18.Empty.Blue.H
+                                        Name=scItem_button_29
+                                        Kind=Normal
+                                        KindHit=Rect
+                                        MouseBlocking=True
+                                        MouseBlockingTest=False
+                                        OnPressCode ~{
+                                            =ExecuteCodeFromString(GenerateCodeStringFromBlock('SC.Functions.AAItemPress'), 'index', 29);
+                                        }
+                                        Pos=6,6
+                                        Size=18,18
+                                        Style=Style.GB.SoundNormal
+                                    }
+                                }
+                            }
+                            Panel ~{
+                                Active=True
+                                Pos=520,140
+                                Size=250,30
+                                Name=scItem_30
+                                Label ~{
+                                    AlignX=Left
+                                    AlignY=CenterEx
+                                    Font=Font.1Small
+                                    Name=scItem_text_30
+                                    Pos=0,0
+                                    Size=150,30
+                                    Text=Описание настройки:
+                                    TextColor=255,255,255
+                                    WordWrap=True
+                                }
+                                Label ~{
+                                    AlignX=Right
+                                    AlignY=CenterEx
+                                    Font=Font.1Small
+                                    Name=scItem_value_30
+                                    Pos=100,0
+                                    Size=120,30
+                                    Text=---
+                                    TextColor=255,255,255
+                                    WordWrap=True
+                                }
+                                Panel ~{
+                                    Active=True
+                                    Pos=220,0
+                                    Size=30,30
+                                    GraphButton ~{
+                                        ImageDown=GI,Bm.Buttons.18.Empty.Blue.D
+                                        ImageNormal=GI,Bm.Buttons.18.Empty.Blue.N
+                                        ImageNormalA=GI,Bm.Buttons.18.Empty.Blue.A
+                                        ImageDisable=GI,Bm.Buttons.18.Empty.Blue.H
+                                        Name=scItem_button_30
+                                        Kind=Normal
+                                        KindHit=Rect
+                                        MouseBlocking=True
+                                        MouseBlockingTest=False
+                                        OnPressCode ~{
+                                            =ExecuteCodeFromString(GenerateCodeStringFromBlock('SC.Functions.AAItemPress'), 'index', 30);
+                                        }
+                                        Pos=6,6
+                                        Size=18,18
+                                        Style=Style.GB.SoundNormal
+                                    }
+                                }
+                            }
+                            Panel ~{
+                                Active=True
+                                Pos=520,175
+                                Size=250,30
+                                Name=scItem_31
+                                Label ~{
+                                    AlignX=Left
+                                    AlignY=CenterEx
+                                    Font=Font.1Small
+                                    Name=scItem_text_31
+                                    Pos=0,0
+                                    Size=150,30
+                                    Text=Описание настройки:
+                                    TextColor=255,255,255
+                                    WordWrap=True
+                                }
+                                Label ~{
+                                    AlignX=Right
+                                    AlignY=CenterEx
+                                    Font=Font.1Small
+                                    Name=scItem_value_31
+                                    Pos=100,0
+                                    Size=120,30
+                                    Text=---
+                                    TextColor=255,255,255
+                                    WordWrap=True
+                                }
+                                Panel ~{
+                                    Active=True
+                                    Pos=220,0
+                                    Size=30,30
+                                    GraphButton ~{
+                                        ImageDown=GI,Bm.Buttons.18.Empty.Blue.D
+                                        ImageNormal=GI,Bm.Buttons.18.Empty.Blue.N
+                                        ImageNormalA=GI,Bm.Buttons.18.Empty.Blue.A
+                                        ImageDisable=GI,Bm.Buttons.18.Empty.Blue.H
+                                        Name=scItem_button_31
+                                        Kind=Normal
+                                        KindHit=Rect
+                                        MouseBlocking=True
+                                        MouseBlockingTest=False
+                                        OnPressCode ~{
+                                            =ExecuteCodeFromString(GenerateCodeStringFromBlock('SC.Functions.AAItemPress'), 'index', 31);
+                                        }
+                                        Pos=6,6
+                                        Size=18,18
+                                        Style=Style.GB.SoundNormal
+                                    }
+                                }
+                            }
+                            Panel ~{
+                                Active=True
+                                Pos=520,210
+                                Size=250,30
+                                Name=scItem_32
+                                Label ~{
+                                    AlignX=Left
+                                    AlignY=CenterEx
+                                    Font=Font.1Small
+                                    Name=scItem_text_32
+                                    Pos=0,0
+                                    Size=150,30
+                                    Text=Описание настройки:
+                                    TextColor=255,255,255
+                                    WordWrap=True
+                                }
+                                Label ~{
+                                    AlignX=Right
+                                    AlignY=CenterEx
+                                    Font=Font.1Small
+                                    Name=scItem_value_32
+                                    Pos=100,0
+                                    Size=120,30
+                                    Text=---
+                                    TextColor=255,255,255
+                                    WordWrap=True
+                                }
+                                Panel ~{
+                                    Active=True
+                                    Pos=220,0
+                                    Size=30,30
+                                    GraphButton ~{
+                                        ImageDown=GI,Bm.Buttons.18.Empty.Blue.D
+                                        ImageNormal=GI,Bm.Buttons.18.Empty.Blue.N
+                                        ImageNormalA=GI,Bm.Buttons.18.Empty.Blue.A
+                                        ImageDisable=GI,Bm.Buttons.18.Empty.Blue.H
+                                        Name=scItem_button_32
+                                        Kind=Normal
+                                        KindHit=Rect
+                                        MouseBlocking=True
+                                        MouseBlockingTest=False
+                                        OnPressCode ~{
+                                            =ExecuteCodeFromString(GenerateCodeStringFromBlock('SC.Functions.AAItemPress'), 'index', 32);
+                                        }
+                                        Pos=6,6
+                                        Size=18,18
+                                        Style=Style.GB.SoundNormal
+                                    }
+                                }
+                            }
+                            Panel ~{
+                                Active=True
+                                Pos=520,245
+                                Size=250,30
+                                Name=scItem_33
+                                Label ~{
+                                    AlignX=Left
+                                    AlignY=CenterEx
+                                    Font=Font.1Small
+                                    Name=scItem_text_33
+                                    Pos=0,0
+                                    Size=150,30
+                                    Text=Описание настройки:
+                                    TextColor=255,255,255
+                                    WordWrap=True
+                                }
+                                Label ~{
+                                    AlignX=Right
+                                    AlignY=CenterEx
+                                    Font=Font.1Small
+                                    Name=scItem_value_33
+                                    Pos=100,0
+                                    Size=120,30
+                                    Text=---
+                                    TextColor=255,255,255
+                                    WordWrap=True
+                                }
+                                Panel ~{
+                                    Active=True
+                                    Pos=220,0
+                                    Size=30,30
+                                    GraphButton ~{
+                                        ImageDown=GI,Bm.Buttons.18.Empty.Blue.D
+                                        ImageNormal=GI,Bm.Buttons.18.Empty.Blue.N
+                                        ImageNormalA=GI,Bm.Buttons.18.Empty.Blue.A
+                                        ImageDisable=GI,Bm.Buttons.18.Empty.Blue.H
+                                        Name=scItem_button_33
+                                        Kind=Normal
+                                        KindHit=Rect
+                                        MouseBlocking=True
+                                        MouseBlockingTest=False
+                                        OnPressCode ~{
+                                            =ExecuteCodeFromString(GenerateCodeStringFromBlock('SC.Functions.AAItemPress'), 'index', 33);
+                                        }
+                                        Pos=6,6
+                                        Size=18,18
+                                        Style=Style.GB.SoundNormal
+                                    }
+                                }
+                            }
+                            Panel ~{
+                                Active=True
+                                Pos=520,280
+                                Size=250,30
+                                Name=scItem_34
+                                Label ~{
+                                    AlignX=Left
+                                    AlignY=CenterEx
+                                    Font=Font.1Small
+                                    Name=scItem_text_34
+                                    Pos=0,0
+                                    Size=150,30
+                                    Text=Описание настройки:
+                                    TextColor=255,255,255
+                                    WordWrap=True
+                                }
+                                Label ~{
+                                    AlignX=Right
+                                    AlignY=CenterEx
+                                    Font=Font.1Small
+                                    Name=scItem_value_34
+                                    Pos=100,0
+                                    Size=120,30
+                                    Text=---
+                                    TextColor=255,255,255
+                                    WordWrap=True
+                                }
+                                Panel ~{
+                                    Active=True
+                                    Pos=220,0
+                                    Size=30,30
+                                    GraphButton ~{
+                                        ImageDown=GI,Bm.Buttons.18.Empty.Blue.D
+                                        ImageNormal=GI,Bm.Buttons.18.Empty.Blue.N
+                                        ImageNormalA=GI,Bm.Buttons.18.Empty.Blue.A
+                                        ImageDisable=GI,Bm.Buttons.18.Empty.Blue.H
+                                        Name=scItem_button_34
+                                        Kind=Normal
+                                        KindHit=Rect
+                                        MouseBlocking=True
+                                        MouseBlockingTest=False
+                                        OnPressCode ~{
+                                            =ExecuteCodeFromString(GenerateCodeStringFromBlock('SC.Functions.AAItemPress'), 'index', 34);
+                                        }
+                                        Pos=6,6
+                                        Size=18,18
+                                        Style=Style.GB.SoundNormal
+                                    }
+                                }
+                            }
+                            Panel ~{
+                                Active=True
+                                Pos=520,315
+                                Size=250,30
+                                Name=scItem_35
+                                Label ~{
+                                    AlignX=Left
+                                    AlignY=CenterEx
+                                    Font=Font.1Small
+                                    Name=scItem_text_35
+                                    Pos=0,0
+                                    Size=150,30
+                                    Text=Описание настройки:
+                                    TextColor=255,255,255
+                                    WordWrap=True
+                                }
+                                Label ~{
+                                    AlignX=Right
+                                    AlignY=CenterEx
+                                    Font=Font.1Small
+                                    Name=scItem_value_35
+                                    Pos=100,0
+                                    Size=120,30
+                                    Text=---
+                                    TextColor=255,255,255
+                                    WordWrap=True
+                                }
+                                Panel ~{
+                                    Active=True
+                                    Pos=220,0
+                                    Size=30,30
+                                    GraphButton ~{
+                                        ImageDown=GI,Bm.Buttons.18.Empty.Blue.D
+                                        ImageNormal=GI,Bm.Buttons.18.Empty.Blue.N
+                                        ImageNormalA=GI,Bm.Buttons.18.Empty.Blue.A
+                                        ImageDisable=GI,Bm.Buttons.18.Empty.Blue.H
+                                        Name=scItem_button_35
+                                        Kind=Normal
+                                        KindHit=Rect
+                                        MouseBlocking=True
+                                        MouseBlockingTest=False
+                                        OnPressCode ~{
+                                            =ExecuteCodeFromString(GenerateCodeStringFromBlock('SC.Functions.AAItemPress'), 'index', 35);
+                                        }
+                                        Pos=6,6
+                                        Size=18,18
+                                        Style=Style.GB.SoundNormal
+                                    }
+                                }
+                            }
+                            Panel ~{
+                                Active=True
+                                Pos=520,350
+                                Size=250,30
+                                Name=scItem_36
+                                Label ~{
+                                    AlignX=Left
+                                    AlignY=CenterEx
+                                    Font=Font.1Small
+                                    Name=scItem_text_36
+                                    Pos=0,0
+                                    Size=150,30
+                                    Text=Описание настройки:
+                                    TextColor=255,255,255
+                                    WordWrap=True
+                                }
+                                Label ~{
+                                    AlignX=Right
+                                    AlignY=CenterEx
+                                    Font=Font.1Small
+                                    Name=scItem_value_36
+                                    Pos=100,0
+                                    Size=120,30
+                                    Text=---
+                                    TextColor=255,255,255
+                                    WordWrap=True
+                                }
+                                Panel ~{
+                                    Active=True
+                                    Pos=220,0
+                                    Size=30,30
+                                    GraphButton ~{
+                                        ImageDown=GI,Bm.Buttons.18.Empty.Blue.D
+                                        ImageNormal=GI,Bm.Buttons.18.Empty.Blue.N
+                                        ImageNormalA=GI,Bm.Buttons.18.Empty.Blue.A
+                                        ImageDisable=GI,Bm.Buttons.18.Empty.Blue.H
+                                        Name=scItem_button_36
+                                        Kind=Normal
+                                        KindHit=Rect
+                                        MouseBlocking=True
+                                        MouseBlockingTest=False
+                                        OnPressCode ~{
+                                            =ExecuteCodeFromString(GenerateCodeStringFromBlock('SC.Functions.AAItemPress'), 'index', 36);
+                                        }
+                                        Pos=6,6
+                                        Size=18,18
+                                        Style=Style.GB.SoundNormal
+                                    }
+                                }
+                            }
+                            Panel ~{
+                                Active=True
+                                Pos=520,385
+                                Size=250,30
+                                Name=scItem_37
+                                Label ~{
+                                    AlignX=Left
+                                    AlignY=CenterEx
+                                    Font=Font.1Small
+                                    Name=scItem_text_37
+                                    Pos=0,0
+                                    Size=150,30
+                                    Text=Описание настройки:
+                                    TextColor=255,255,255
+                                    WordWrap=True
+                                }
+                                Label ~{
+                                    AlignX=Right
+                                    AlignY=CenterEx
+                                    Font=Font.1Small
+                                    Name=scItem_value_37
+                                    Pos=100,0
+                                    Size=120,30
+                                    Text=---
+                                    TextColor=255,255,255
+                                    WordWrap=True
+                                }
+                                Panel ~{
+                                    Active=True
+                                    Pos=220,0
+                                    Size=30,30
+                                    GraphButton ~{
+                                        ImageDown=GI,Bm.Buttons.18.Empty.Blue.D
+                                        ImageNormal=GI,Bm.Buttons.18.Empty.Blue.N
+                                        ImageNormalA=GI,Bm.Buttons.18.Empty.Blue.A
+                                        ImageDisable=GI,Bm.Buttons.18.Empty.Blue.H
+                                        Name=scItem_button_37
+                                        Kind=Normal
+                                        KindHit=Rect
+                                        MouseBlocking=True
+                                        MouseBlockingTest=False
+                                        OnPressCode ~{
+                                            =ExecuteCodeFromString(GenerateCodeStringFromBlock('SC.Functions.AAItemPress'), 'index', 37);
+                                        }
+                                        Pos=6,6
+                                        Size=18,18
+                                        Style=Style.GB.SoundNormal
+                                    }
+                                }
+                            }
+                            Panel ~{
+                                Active=True
+                                Pos=520,420
+                                Size=250,30
+                                Name=scItem_38
+                                Label ~{
+                                    AlignX=Left
+                                    AlignY=CenterEx
+                                    Font=Font.1Small
+                                    Name=scItem_text_38
+                                    Pos=0,0
+                                    Size=150,30
+                                    Text=Описание настройки:
+                                    TextColor=255,255,255
+                                    WordWrap=True
+                                }
+                                Label ~{
+                                    AlignX=Right
+                                    AlignY=CenterEx
+                                    Font=Font.1Small
+                                    Name=scItem_value_38
+                                    Pos=100,0
+                                    Size=120,30
+                                    Text=---
+                                    TextColor=255,255,255
+                                    WordWrap=True
+                                }
+                                Panel ~{
+                                    Active=True
+                                    Pos=220,0
+                                    Size=30,30
+                                    GraphButton ~{
+                                        ImageDown=GI,Bm.Buttons.18.Empty.Blue.D
+                                        ImageNormal=GI,Bm.Buttons.18.Empty.Blue.N
+                                        ImageNormalA=GI,Bm.Buttons.18.Empty.Blue.A
+                                        ImageDisable=GI,Bm.Buttons.18.Empty.Blue.H
+                                        Name=scItem_button_38
+                                        Kind=Normal
+                                        KindHit=Rect
+                                        MouseBlocking=True
+                                        MouseBlockingTest=False
+                                        OnPressCode ~{
+                                            =ExecuteCodeFromString(GenerateCodeStringFromBlock('SC.Functions.AAItemPress'), 'index', 38);
+                                        }
+                                        Pos=6,6
+                                        Size=18,18
+                                        Style=Style.GB.SoundNormal
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    Panel ~{
+                        Active=False
+                        Name=scDiffPanel
+                        Pos=0,0
+                        Size=540,170
+                        Image ~{
+                            Image=GI,Bm.SettingsControl.BG_Diff
+                            MouseBlocking=True
+                            MouseBlockingTest=True
+                            Pos=0,0,10
+                            Size=540,170
+                        }
+                        GraphButton ~{
+                            ImageDown=GI,Bm.Buttons.18.Hammer.Blue.D
+                            ImageNormal=GI,Bm.Buttons.18.Hammer.Blue.N
+                            ImageNormalA=GI,Bm.Buttons.18.Hammer.Blue.A
+                            ImageDisable=GI,Bm.Buttons.18.Hammer.Blue.H
+                            Kind=Normal
+                            KindHit=Rect
+                            MouseBlocking=True
+                            MouseBlockingTest=True
+                            OnPressCode ~{
+                                0=ExecuteCodeFromString(GenerateCodeStringFromBlock('SC.Functions.AAOpen'));
+                            }
+                            Pos=0,0
+                            Size=18,18
+                            Style=Style.GB.SoundNormal
+                        }
+                        GraphButton ~{
+                            ImageDown=GI,Bm.Buttons.18.Percent.Blue.D
+                            ImageNormal=GI,Bm.Buttons.18.Percent.Blue.N
+                            ImageNormalA=GI,Bm.Buttons.18.Percent.Blue.A
+                            ImageDisable=GI,Bm.Buttons.18.Percent.Blue.H
+                            Kind=Normal
+                            KindHit=Rect
+                            MouseBlocking=True
+                            MouseBlockingTest=True
+                            OnPressCode ~{
+                                0=ExecuteCodeFromString(GenerateCodeStringFromBlock('SC.Functions.ClosePanel'));
+                            }
+                            Pos=18,0
+                            Size=18,18
+                            Style=Style.GB.SoundNormal
+                        }
+                        Label ^{
+                            AlignX=Center
+                            AlignY=CenterEx
+                            Font=Font.2NormalBold
+                            Name=scTitle_Diff
+                            Pos=120,4
+                            Size=300,15
+                            Text=Изменение сложности партии:
+                            TextColor=255,255,255
+                            WordWrap=True
+                        }
+                        Panel ~{
+                            Active=True
+                            Pos=15,25,-3
+                            Size=510,135
+                            Panel ~{
+                                Active=True
+                                Pos=0,0
+                                Size=250,30
+                                Name=scItem_diff_0
+                                Label ~{
+                                    AlignX=Left
+                                    AlignY=CenterEx
+                                    Font=Font.1Small
+                                    Name=scItem_diff_text_0
+                                    Pos=0,0
+                                    Size=150,30
+                                    Text=Описание настройки:
+                                    TextColor=255,255,255
+                                    WordWrap=True
+                                }
+                                Label ~{
+                                    AlignX=Right
+                                    AlignY=CenterEx
+                                    Font=Font.1Small
+                                    Name=scItem_diff_value_0
+                                    Pos=100,0
+                                    Size=120,30
+                                    Text=---
+                                    TextColor=255,255,255
+                                    WordWrap=True
+                                }
+                                Panel ~{
+                                    Active=True
+                                    Pos=220,0
+                                    Size=30,30
+                                    GraphButton ~{
+                                        ImageDown=GI,Bm.Buttons.18.Percent.Blue.D
+                                        ImageNormal=GI,Bm.Buttons.18.Percent.Blue.N
+                                        ImageNormalA=GI,Bm.Buttons.18.Percent.Blue.A
+                                        ImageDisable=GI,Bm.Buttons.18.Percent.Blue.H
+                                        Name=scItem_diff_button_0
+                                        Kind=Normal
+                                        KindHit=Rect
+                                        MouseBlocking=True
+                                        MouseBlockingTest=False
+                                        OnPressCode ~{
+                                            =ExecuteCodeFromString(GenerateCodeStringFromBlock('SC.Functions.DiffItemPress'), 'index', 0);
+                                        }
+                                        Pos=6,6
+                                        Size=18,18
+                                        Style=Style.GB.SoundNormal
+                                    }
+                                }
+                            }
+                            Panel ~{
+                                Active=True
+                                Pos=0,35
+                                Size=250,30
+                                Name=scItem_diff_1
+                                Label ~{
+                                    AlignX=Left
+                                    AlignY=CenterEx
+                                    Font=Font.1Small
+                                    Name=scItem_diff_text_1
+                                    Pos=0,0
+                                    Size=150,30
+                                    Text=Описание настройки:
+                                    TextColor=255,255,255
+                                    WordWrap=True
+                                }
+                                Label ~{
+                                    AlignX=Right
+                                    AlignY=CenterEx
+                                    Font=Font.1Small
+                                    Name=scItem_diff_value_1
+                                    Pos=100,0
+                                    Size=120,30
+                                    Text=---
+                                    TextColor=255,255,255
+                                    WordWrap=True
+                                }
+                                Panel ~{
+                                    Active=True
+                                    Pos=220,0
+                                    Size=30,30
+                                    GraphButton ~{
+                                        ImageDown=GI,Bm.Buttons.18.Percent.Blue.D
+                                        ImageNormal=GI,Bm.Buttons.18.Percent.Blue.N
+                                        ImageNormalA=GI,Bm.Buttons.18.Percent.Blue.A
+                                        ImageDisable=GI,Bm.Buttons.18.Percent.Blue.H
+                                        Name=scItem_diff_button_1
+                                        Kind=Normal
+                                        KindHit=Rect
+                                        MouseBlocking=True
+                                        MouseBlockingTest=False
+                                        OnPressCode ~{
+                                            =ExecuteCodeFromString(GenerateCodeStringFromBlock('SC.Functions.DiffItemPress'), 'index', 1);
+                                        }
+                                        Pos=6,6
+                                        Size=18,18
+                                        Style=Style.GB.SoundNormal
+                                    }
+                                }
+                            }
+                            Panel ~{
+                                Active=True
+                                Pos=0,70
+                                Size=250,30
+                                Name=scItem_diff_2
+                                Label ~{
+                                    AlignX=Left
+                                    AlignY=CenterEx
+                                    Font=Font.1Small
+                                    Name=scItem_diff_text_2
+                                    Pos=0,0
+                                    Size=150,30
+                                    Text=Описание настройки:
+                                    TextColor=255,255,255
+                                    WordWrap=True
+                                }
+                                Label ~{
+                                    AlignX=Right
+                                    AlignY=CenterEx
+                                    Font=Font.1Small
+                                    Name=scItem_diff_value_2
+                                    Pos=100,0
+                                    Size=120,30
+                                    Text=---
+                                    TextColor=255,255,255
+                                    WordWrap=True
+                                }
+                                Panel ~{
+                                    Active=True
+                                    Pos=220,0
+                                    Size=30,30
+                                    GraphButton ~{
+                                        ImageDown=GI,Bm.Buttons.18.Percent.Blue.D
+                                        ImageNormal=GI,Bm.Buttons.18.Percent.Blue.N
+                                        ImageNormalA=GI,Bm.Buttons.18.Percent.Blue.A
+                                        ImageDisable=GI,Bm.Buttons.18.Percent.Blue.H
+                                        Name=scItem_diff_button_2
+                                        Kind=Normal
+                                        KindHit=Rect
+                                        MouseBlocking=True
+                                        MouseBlockingTest=False
+                                        OnPressCode ~{
+                                            =ExecuteCodeFromString(GenerateCodeStringFromBlock('SC.Functions.DiffItemPress'), 'index', 2);
+                                        }
+                                        Pos=6,6
+                                        Size=18,18
+                                        Style=Style.GB.SoundNormal
+                                    }
+                                }
+                            }
+                            Panel ~{
+                                Active=True
+                                Pos=0,105
+                                Size=250,30
+                                Name=scItem_diff_3
+                                Label ~{
+                                    AlignX=Left
+                                    AlignY=CenterEx
+                                    Font=Font.1Small
+                                    Name=scItem_diff_text_3
+                                    Pos=0,0
+                                    Size=150,30
+                                    Text=Описание настройки:
+                                    TextColor=255,255,255
+                                    WordWrap=True
+                                }
+                                Label ~{
+                                    AlignX=Right
+                                    AlignY=CenterEx
+                                    Font=Font.1Small
+                                    Name=scItem_diff_value_3
+                                    Pos=100,0
+                                    Size=120,30
+                                    Text=---
+                                    TextColor=255,255,255
+                                    WordWrap=True
+                                }
+                                Panel ~{
+                                    Active=True
+                                    Pos=220,0
+                                    Size=30,30
+                                    GraphButton ~{
+                                        ImageDown=GI,Bm.Buttons.18.Percent.Blue.D
+                                        ImageNormal=GI,Bm.Buttons.18.Percent.Blue.N
+                                        ImageNormalA=GI,Bm.Buttons.18.Percent.Blue.A
+                                        ImageDisable=GI,Bm.Buttons.18.Percent.Blue.H
+                                        Name=scItem_diff_button_3
+                                        Kind=Normal
+                                        KindHit=Rect
+                                        MouseBlocking=True
+                                        MouseBlockingTest=False
+                                        OnPressCode ~{
+                                            =ExecuteCodeFromString(GenerateCodeStringFromBlock('SC.Functions.DiffItemPress'), 'index', 3);
+                                        }
+                                        Pos=6,6
+                                        Size=18,18
+                                        Style=Style.GB.SoundNormal
+                                    }
+                                }
+                            }
+                            Panel ~{
+                                Active=True
+                                Pos=260,0
+                                Size=250,30
+                                Name=scItem_diff_4
+                                Label ~{
+                                    AlignX=Left
+                                    AlignY=CenterEx
+                                    Font=Font.1Small
+                                    Name=scItem_diff_text_4
+                                    Pos=0,0
+                                    Size=150,30
+                                    Text=Описание настройки:
+                                    TextColor=255,255,255
+                                    WordWrap=True
+                                }
+                                Label ~{
+                                    AlignX=Right
+                                    AlignY=CenterEx
+                                    Font=Font.1Small
+                                    Name=scItem_diff_value_4
+                                    Pos=100,0
+                                    Size=120,30
+                                    Text=---
+                                    TextColor=255,255,255
+                                    WordWrap=True
+                                }
+                                Panel ~{
+                                    Active=True
+                                    Pos=220,0
+                                    Size=30,30
+                                    GraphButton ~{
+                                        ImageDown=GI,Bm.Buttons.18.Percent.Blue.D
+                                        ImageNormal=GI,Bm.Buttons.18.Percent.Blue.N
+                                        ImageNormalA=GI,Bm.Buttons.18.Percent.Blue.A
+                                        ImageDisable=GI,Bm.Buttons.18.Percent.Blue.H
+                                        Name=scItem_diff_button_4
+                                        Kind=Normal
+                                        KindHit=Rect
+                                        MouseBlocking=True
+                                        MouseBlockingTest=False
+                                        OnPressCode ~{
+                                            =ExecuteCodeFromString(GenerateCodeStringFromBlock('SC.Functions.DiffItemPress'), 'index', 4);
+                                        }
+                                        Pos=6,6
+                                        Size=18,18
+                                        Style=Style.GB.SoundNormal
+                                    }
+                                }
+                            }
+                            Panel ~{
+                                Active=True
+                                Pos=260,35
+                                Size=250,30
+                                Name=scItem_diff_5
+                                Label ~{
+                                    AlignX=Left
+                                    AlignY=CenterEx
+                                    Font=Font.1Small
+                                    Name=scItem_diff_text_5
+                                    Pos=0,0
+                                    Size=150,30
+                                    Text=Описание настройки:
+                                    TextColor=255,255,255
+                                    WordWrap=True
+                                }
+                                Label ~{
+                                    AlignX=Right
+                                    AlignY=CenterEx
+                                    Font=Font.1Small
+                                    Name=scItem_diff_value_5
+                                    Pos=100,0
+                                    Size=120,30
+                                    Text=---
+                                    TextColor=255,255,255
+                                    WordWrap=True
+                                }
+                                Panel ~{
+                                    Active=True
+                                    Pos=220,0
+                                    Size=30,30
+                                    GraphButton ~{
+                                        ImageDown=GI,Bm.Buttons.18.Percent.Blue.D
+                                        ImageNormal=GI,Bm.Buttons.18.Percent.Blue.N
+                                        ImageNormalA=GI,Bm.Buttons.18.Percent.Blue.A
+                                        ImageDisable=GI,Bm.Buttons.18.Percent.Blue.H
+                                        Name=scItem_diff_button_5
+                                        Kind=Normal
+                                        KindHit=Rect
+                                        MouseBlocking=True
+                                        MouseBlockingTest=False
+                                        OnPressCode ~{
+                                            =ExecuteCodeFromString(GenerateCodeStringFromBlock('SC.Functions.DiffItemPress'), 'index', 5);
+                                        }
+                                        Pos=6,6
+                                        Size=18,18
+                                        Style=Style.GB.SoundNormal
+                                    }
+                                }
+                            }
+                            Panel ~{
+                                Active=True
+                                Pos=260,70
+                                Size=250,30
+                                Name=scItem_diff_6
+                                Label ~{
+                                    AlignX=Left
+                                    AlignY=CenterEx
+                                    Font=Font.1Small
+                                    Name=scItem_diff_text_6
+                                    Pos=0,0
+                                    Size=150,30
+                                    Text=Описание настройки:
+                                    TextColor=255,255,255
+                                    WordWrap=True
+                                }
+                                Label ~{
+                                    AlignX=Right
+                                    AlignY=CenterEx
+                                    Font=Font.1Small
+                                    Name=scItem_diff_value_6
+                                    Pos=100,0
+                                    Size=120,30
+                                    Text=---
+                                    TextColor=255,255,255
+                                    WordWrap=True
+                                }
+                                Panel ~{
+                                    Active=True
+                                    Pos=220,0
+                                    Size=30,30
+                                    GraphButton ~{
+                                        ImageDown=GI,Bm.Buttons.18.Percent.Blue.D
+                                        ImageNormal=GI,Bm.Buttons.18.Percent.Blue.N
+                                        ImageNormalA=GI,Bm.Buttons.18.Percent.Blue.A
+                                        ImageDisable=GI,Bm.Buttons.18.Percent.Blue.H
+                                        Name=scItem_diff_button_6
+                                        Kind=Normal
+                                        KindHit=Rect
+                                        MouseBlocking=True
+                                        MouseBlockingTest=False
+                                        OnPressCode ~{
+                                            =ExecuteCodeFromString(GenerateCodeStringFromBlock('SC.Functions.DiffItemPress'), 'index', 6);
+                                        }
+                                        Pos=6,6
+                                        Size=18,18
+                                        Style=Style.GB.SoundNormal
+                                    }
+                                }
+                            }
+                            Panel ~{
+                                Active=True
+                                Pos=260,105
+                                Size=250,30
+                                Name=scItem_diff_7
+                                Label ~{
+                                    AlignX=Left
+                                    AlignY=CenterEx
+                                    Font=Font.1Small
+                                    Name=scItem_diff_text_7
+                                    Pos=0,0
+                                    Size=150,30
+                                    Text=Описание настройки:
+                                    TextColor=255,255,255
+                                    WordWrap=True
+                                }
+                                Label ~{
+                                    AlignX=Right
+                                    AlignY=CenterEx
+                                    Font=Font.1Small
+                                    Name=scItem_diff_value_7
+                                    Pos=100,0
+                                    Size=120,30
+                                    Text=---
+                                    TextColor=255,255,255
+                                    WordWrap=True
+                                }
+                                Panel ~{
+                                    Active=True
+                                    Pos=220,0
+                                    Size=30,30
+                                    GraphButton ~{
+                                        ImageDown=GI,Bm.Buttons.18.Percent.Blue.D
+                                        ImageNormal=GI,Bm.Buttons.18.Percent.Blue.N
+                                        ImageNormalA=GI,Bm.Buttons.18.Percent.Blue.A
+                                        ImageDisable=GI,Bm.Buttons.18.Percent.Blue.H
+                                        Name=scItem_diff_button_7
+                                        Kind=Normal
+                                        KindHit=Rect
+                                        MouseBlocking=True
+                                        MouseBlockingTest=False
+                                        OnPressCode ~{
+                                            =ExecuteCodeFromString(GenerateCodeStringFromBlock('SC.Functions.DiffItemPress'), 'index', 7);
+                                        }
+                                        Pos=6,6
+                                        Size=18,18
+                                        Style=Style.GB.SoundNormal
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

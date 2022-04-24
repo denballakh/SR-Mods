@@ -1,0 +1,577 @@
+SC ~{
+    AATypes ~{
+        0 ~{
+            type=?
+            text=Тонкие настройки
+            str0=<color=255,0,0>ВЫКЛЮЧЕНЫ
+            str1=<color=0,255,0>ВКЛЮЧЕНЫ
+        }
+        1 ~{
+            type=%
+            inv=1
+            text=Оснащение доминаторов
+        }
+        2 ~{
+            type=%
+            inv=1
+            text=Агрессивность доминаторов
+        }
+        3 ~{
+            type=%
+            inv=1
+            text=Темп воспроизводства доминаторов
+        }
+        4 ~{
+            type=%
+            inv=1
+            text=Агрессивность пиратов
+        }
+        5 ~{
+            type=%
+            text=Активность коалиции
+        }
+        6 ~{
+            type=%
+            inv=1
+            text=Количество астероидов
+        }
+        7 ~{
+            type=%
+            inv=1
+            text=Урон от звезд
+        }
+        8 ~{
+            const=1
+            type=.
+            text=Бонус к стартовым технологиям
+        }
+        9 ~{
+            type=.
+            max=100
+            postfix=%
+            text=Кол-во акриновых вещей в магазинах
+        }
+        10 ~{
+            type=%
+            text=Кол-во нодов, выпадающих из доминаторов
+        }
+        11 ~{
+            type=%
+            text=Качество оборудования, выпадающего в ЧД
+        }
+        12 ~{
+            type=%
+            text=Максимальная стоимость выпадающих предметов
+        }
+        13 ~{
+            const=1
+            type=.
+            max=10
+            text=Относительное содержание аграрных планет
+        }
+        14 ~{
+            const=1
+            type=.
+            max=10
+            text=Относительное содержание смешанных планет
+        }
+        15 ~{
+            const=1
+            type=.
+            max=10
+            text=Относительное содержание индустриальных планет
+        }
+        16 ~{
+            const=1
+            type=.
+            max=50
+            text=Кол-во дополнительных рейнджеров
+        }
+        17 ~{
+            type=%
+            inv=1
+            text=Выносливость в ЧД
+        }
+        18 ~{
+            type=%
+            inv=1
+            text=Урон в ЧД
+        }
+        19 ~{
+            type=.
+            text=Кол-во предметов до расстрела НПС
+        }
+        20 ~{
+            type=?
+            text=Результат случайных событий
+            str0=<color=255,0,0>Не меняется
+            str1=<color=0,255,0>Меняется
+        }
+        21 ~{
+            type=?
+            text=Использование и ремонт оборудования
+            str0=<color=255,0,0>Ограничено ГТУ
+            str1=<color=0,255,0>Без ограничений
+        }
+        22 ~{
+            type=?
+            text=Постройка станций
+            str0=<color=255,0,0>В любом месте системы
+            str1=<color=0,255,0>Близко к центру
+        }
+        23 ~{
+            type=?
+            text=Вдали от игрока станции
+            str0=<color=255,0,0>Пропускают выстрелы
+            str1=<color=0,255,0>Стреляют<br>как обычно
+        }
+        24 ~{
+            type=?
+            text=Уникальные корпуса
+            str0=<color=255,0,0>Не доступны
+            str1=<color=0,255,0>Доступны
+        }
+        25 ~{
+            type=?
+            inv=1
+            text=Пираты и мирные появляются
+            str0=<color=0,255,0>С опытом
+            str1=<color=255,0,0>Без опыта
+        }
+        26 ~{
+            type=?
+            text=Противники в ЧД
+            str0=<color=255,0,0>Действуют заодно
+            str1=<color=0,255,0>Враждуют между собой
+        }
+        27 ~{
+            type=?
+            inv=1
+            text=Особое вооружение другим сериям
+            str0=<color=0,255,0>Доступно
+            str1=<color=255,0,0>Не доступно
+        }
+        28 ~{
+            const=1
+            type=?
+            inv=1
+            text=Расположение стартовой системы
+            str0=<color=0,255,0>В углу
+            str1=<color=255,0,0>В центре
+        }
+        29 ~{
+            type=?
+            text=НПС стреляют
+            str0=<color=255,0,0>Со средней дистанции
+            str1=<color=0,255,0>С максимальной
+        }
+        30 ~{
+            type=?
+            text=Сражения с гиперпиратами
+            str0=<color=255,0,0>Выключены
+            str1=<color=0,255,0>Включены
+        }
+        31 ~{
+            type=?
+            text=Продажа нодов на ПБ
+            str0=<color=255,0,0>Выключена
+            str1=<color=0,255,0>Включена
+        }
+        32 ~{
+            type=?
+            text=НПС получают оборудование
+            str0=<color=255,0,0>По собственным каналам
+            str1=<color=0,255,0>Из магазина
+        }
+        33 ~{
+            type=?
+            text=Станции получают оборудование
+            str0=<color=255,0,0>С помощью игрока
+            str1=<color=0,255,0>Из магазина
+        }
+        34 ~{
+            type=?
+            text=Использование одинаковых артефактов
+            str0=<color=255,0,0>Запрещено
+            str1=<color=0,255,0>Разрешено
+        }
+        35 ~{
+            type=?
+            cnt=3
+            inv=1
+            text=Размер корпусов
+            str0=<color=0,255,0>Растет
+            str1=<color=255,240,100>Медленно растет
+            str2=<color=255,0,0>Ограничен ГТУ
+        }
+        36 ~{
+            type=?
+            text=Смена оборудования в ЧД
+            str0=<color=255,0,0>Запрещена
+            str1=<color=0,255,0>Разрешена
+        }
+        37 ~{
+            type=?
+            text=Формула скорости
+            str0=<color=255,0,0>Нелинейная
+            str1=<color=0,255,0>Линейная
+        }
+        38 ~{
+            type=?
+            text=Акрин накладывается на каждую ракету
+            str0=<color=255,0,0>Нет
+            str1=<color=0,255,0>Да
+        }
+    }
+    DiffTypes ~{
+        0 ~{
+            type=%
+            inv=1
+            text=Пираты
+        }
+        1 ~{
+            type=%
+            inv=1
+            text=Разброс цен
+        }
+        2 ~{
+            type=%
+            inv=1
+            text=Ученые
+        }
+        3 ~{
+            type=%
+            inv=1
+            text=Поломки
+        }
+        4 ~{
+            type=%
+            inv=1
+            text=Оборудование
+        }
+        5 ~{
+            type=%
+            inv=1
+            text=Задания
+        }
+        6 ~{
+            type=%
+            inv=1
+            text=Черные дыры
+        }
+        7 ~{
+            type=%
+            inv=1
+            text=Удача
+        }
+    }
+    OrderMap ~{
+        номер_в_интерфейсе=номер в памяти
+        0=0
+        1=1
+        2=3
+        3=2
+        4=4
+        5=5
+        6=8
+        7=16
+        8=25
+        9=27
+        10=29
+        11=35
+        12=6
+        13=7
+        14=13
+        15=14
+        16=15
+        17=28
+        18=20
+        19=22
+        20=23
+        21=33
+        22=24
+        23=9
+        24=10
+        25=21
+        26=12
+        27=11
+        28=17
+        29=18
+        30=26
+        31=19
+        32=30
+        33=31
+        34=32
+        35=34
+        36=36
+        37=37
+        38=38
+    }
+    OrderMap_inv ~{
+        номер_в_памяти=номер в интерфейсе
+        0=0
+        1=1
+        3=2
+        2=3
+        4=4
+        5=5
+        8=6
+        16=7
+        25=8
+        27=9
+        29=10
+        35=11
+        6=12
+        7=13
+        13=14
+        14=15
+        15=16
+        28=17
+        20=18
+        22=19
+        23=20
+        33=21
+        24=22
+        9=23
+        10=24
+        21=25
+        12=26
+        11=27
+        17=28
+        18=29
+        26=30
+        19=31
+        30=32
+        31=33
+        32=34
+        34=35
+        36=36
+        37=37
+        38=38
+    }
+    Functions ~{
+        AAOpen ~{
+            =InterfaceState('StarMap', 'scOpenButton', 0);
+            =InterfaceState('StarMap', 'scAAPanel', 1);
+            =InterfaceState('StarMap', 'scDiffPanel', 0);
+            =ExecuteCodeFromString(GenerateCodeStringFromBlock('SC.Functions.InitAAValues'));
+        }
+        DiffOpen ~{
+            =InterfaceState('StarMap', 'scOpenButton', 0);
+            =InterfaceState('StarMap', 'scAAPanel', 0);
+            =InterfaceState('StarMap', 'scDiffPanel', 1);
+            =ExecuteCodeFromString(GenerateCodeStringFromBlock('SC.Functions.InitDiffValues'));
+        }
+        ClosePanel ~{
+            =InterfaceState('StarMap', 'scOpenButton', 1);
+            =InterfaceState('StarMap', 'scAAPanel', 0);
+            =InterfaceState('StarMap', 'scDiffPanel', 0);
+        }
+        AAItemPress ~{
+            =// index - param
+            =//SFT('AAItemPress: index ' + index);
+            =function SetDword(ptr, value) 
+            ~{
+                =PlanetSetGoods(ptr - 120, 0, value); 
+            }
+            =function GetDword(ptr) 
+            ~{
+                =result = GoodsCount(ptr - 48, 0); 
+            }
+            =function SetByte(ptr, value) 
+            ~{
+                =SetDword(ptr, ~(~GetDword(ptr) | 255) | value); 
+            }
+            =function GetByte(ptr) 
+            ~{ 
+                =result = GetDword(ptr) & 255; 
+            }
+            =dword G = GalaxyPtr();
+            =float f; int d; str s;
+            =int i = CT('SC.OrderMap.' + index);
+            =int value = GetByte(G + 392 + i);
+            =int newvalue; unknown res;
+            =str type = CT('SC.AATypes.' + i + '.type');
+            =//SFT('type = ' + type);
+            =if (type == '.')
+            ~{
+                =if (CT('SC.AATypes.' + i + '.max')) d = CT('SC.AATypes.' + i + '.max'); else d = 255;
+                =res = NumberBox('Bm.Items.2Nod4_s', 'Выбор значения', 0, d, 255, '', value);
+                =//SFT('res = ' + res + ' = = ' + (res == 'Cancel'));
+                =if ('Cancel' == res) newvalue = value;
+                =else newvalue = int(res);
+            }
+            =if (type == '?')
+            ~{
+                =if (CT('SC.AATypes.' + i + '.cnt')) d = CT('SC.AATypes.' + i + '.cnt'); else d = 2;
+                =newvalue = (value + 1) % d;
+            }
+            =if (type == '%')
+            ~{
+                =if (CT('SC.AATypes.' + i + '.max')) d = CT('SC.AATypes.' + i + '.max'); else d = 72;
+                =res = NumberBox('Bm.Items.2Nod4_s', 'Выбор модификатора', 50, round(50.0 + 6.25 * d), 500, '', round(50.0 + 6.25 * value));
+                =//SFT('res = ' + res + ' = = ' + (res == 'Cancel'));
+                =if ('Cancel' == res) newvalue = value;
+                =else newvalue = round(1.0 * (1.0 * res - 50.0) / 6.25);
+            }
+            =SetByte(G + 392 + i, newvalue);
+            =ExecuteCodeFromString(GenerateCodeStringFromBlock('SC.Functions.InitAAValues_opt'), 'param', i);
+        }
+        InitAAValues ~{
+            =ExecuteCodeFromString(GenerateCodeStringFromBlock('SC.Functions.InitAAValues_opt'), 'param', -1);
+        }
+        InitAAValues_opt ~{
+            =//SFT('InitAAValues_opt param=' + param);
+            =function SetDword(ptr, value) 
+            ~{
+                =PlanetSetGoods(ptr - 120, 0, value); 
+            }
+            =function GetDword(ptr) 
+            ~{
+                =result = GoodsCount(ptr - 48, 0); 
+            }
+            =function SetByte(ptr, value) 
+            ~{
+                =SetDword(ptr, ~(~GetDword(ptr) | 255) | value); 
+            }
+            =function GetByte(ptr) 
+            ~{ 
+                =result = GetDword(ptr) & 255; 
+            }
+            =dword G = GalaxyPtr();
+            =float f; int d; str s;
+            =if (param == -1) int mn = 0; else mn = param;
+            =if (param == -1) int mx = 38; else mx = param;
+            =for (int i = mn; i <= mx; i = i + 1)
+            ~{
+                =int value = GetByte(G + 392 + i);
+                =//SFT('i = ' + i + ', value = ' + value);
+                =int interface = CT('SC.OrderMap_inv.' + i);
+                =str type = CT('SC.AATypes.' + i + '.type');
+                =s = CT('SC.AATypes.' + i + '.text');
+                =InterfaceText('StarMap', 'scItem_text_' + interface, s);
+                =int const = CT('SC.AATypes.' + i + '.const');
+                =if (type == '.')
+                ~{
+                    =if (CT('SC.AATypes.' + i + '.max')) d = CT('SC.AATypes.' + i + '.max'); else d = 255;
+                    =d = round(2.0 * value / d * 255.0);
+                    =if (d < 256) s = '<color=' + 255 + ',' + d + ',0>';
+                    =else s = '<color=' + (255 + 256 - d) + ',' + 255 + ',0>';
+                    =s = s + value;
+                    =if (CT('SC.AATypes.' + i + '.postfix')) s = s + CT('SC.AATypes.' + i + '.postfix');
+                    =InterfaceText('StarMap', 'scItem_value_' + interface, '' + s + ' ');
+                    =if (const) InterfaceImage('StarMap', 'scItem_button_' + interface, 'Style:Style.Buttons.Empty_disabled');
+                    =else InterfaceImage('StarMap', 'scItem_button_' + interface, 'Style:Style.Buttons.Empty');
+                }
+                =if (type == '?')
+                ~{
+                    =if (CT('SC.AATypes.' + i + '.cnt')) d = -1 + CT('SC.AATypes.' + i + '.cnt'); else d = 1;
+                    =s = CT('SC.AATypes.' + i + '.str' + value);
+                    =if (CT('SC.AATypes.' + i + '.inv')) value = d - value;
+                    =InterfaceText('StarMap', 'scItem_value_' + interface, '' + s + ' ');
+                    =if (value == 0) 
+                        =if (const) InterfaceImage('StarMap', 'scItem_button_' + interface, 'Style:Style.Buttons.RedMinus_disabled');
+                        =else InterfaceImage('StarMap', 'scItem_button_' + interface, 'Style:Style.Buttons.RedMinus');
+                    =else if (value == d)
+                        =if (const) InterfaceImage('StarMap', 'scItem_button_' + interface, 'Style:Style.Buttons.GreenPlus_disabled');
+                        =else InterfaceImage('StarMap', 'scItem_button_' + interface, 'Style:Style.Buttons.GreenPlus');
+                    =else if (const) InterfaceImage('StarMap', 'scItem_button_' + interface, 'Style:Style.Buttons.YellowCircle_disabled');
+                        =else InterfaceImage('StarMap', 'scItem_button_' + interface, 'Style:Style.Buttons.YellowCircle');
+                }
+                =if (type == '%')
+                ~{
+                    =if (CT('SC.AATypes.' + i + '.max')) d = CT('SC.AATypes.' + i + '.max'); else d = 72;
+                    =d = round(2.0 * value / d * 255.0);
+                    =if (CT('SC.AATypes.' + i + '.inv')) d = 510 - d;
+                    =if (d < 256) s = '<color=' + 255 + ',' + d + ',0>';
+                    =else s = '<color=' + (255 + 256 - d) + ',' + 255 + ',0>';
+                    =f = 50.0 + 6.25 * value;
+                    =InterfaceText('StarMap', 'scItem_value_' + interface, '' + s + round(f) + '%' + ' ');
+                    =if (const) InterfaceImage('StarMap', 'scItem_button_' + interface, 'Style:Style.Buttons.Percent_disabled');
+                    =else InterfaceImage('StarMap', 'scItem_button_' + interface, 'Style:Style.Buttons.Percent');
+                }
+                =if(const) InterfaceState('StarMap', 'scItem_button_' + interface, 2);
+                =else InterfaceState('StarMap', 'scItem_button_' + interface, -1);
+            }
+        }
+        DiffItemPress ~{
+            =// index - param
+            =//SFT('DiffItemPress: index ' + index);
+            =function SetDword(ptr, value) 
+            ~{
+                =PlanetSetGoods(ptr - 120, 0, value); 
+            }
+            =function GetDword(ptr) 
+            ~{
+                =result = GoodsCount(ptr - 48, 0); 
+            }
+            =function SetByte(ptr, value) 
+            ~{
+                =SetDword(ptr, ~(~GetDword(ptr) | 255) | value); 
+            }
+            =function GetByte(ptr) 
+            ~{ 
+                =result = GetDword(ptr) & 255; 
+            }
+            =dword G = GalaxyPtr();
+            =float f; int d; str s;
+            =int i = index;
+            =int value = GetByte(G + 80 + index);
+            =int newvalue; unknown res;
+            =str type = CT('SC.DiffTypes.' + i + '.type');
+            =if (type == '%')
+            ~{
+                =if (CT('SC.DiffTypes.' + i + '.max')) d = CT('SC.DiffTypes.' + i + '.max'); else d = 9;
+                =res = NumberBox('Bm.Items.2Nod4_s', 'Выбор сложности', 50, round(50.0 * (1.0 + d)), round(50.0 * (1.0 + d)), '', round(50.0 * (1.0 + value)));
+                =//SFT('res = ' + res + ' = = ' + (res == 'Cancel'));
+                =if ('Cancel' == res) newvalue = value;
+                =else newvalue = round(1.0 * (1.0 * res - 50.0) / 50.0);
+            }
+            =else SFT('[SettingsControl SC.Functions.DiffItemPress] Wrong diff type');
+            =SetByte(G + 80 + index, newvalue);
+            =ExecuteCodeFromString(GenerateCodeStringFromBlock('SC.Functions.InitDiffValues'));
+        }
+        InitDiffValues ~{
+            =//SFT('InitDiffValues');
+            =function SetDword(ptr, value) 
+            ~{
+                =PlanetSetGoods(ptr - 120, 0, value); 
+            }
+            =function GetDword(ptr) 
+            ~{
+                =result = GoodsCount(ptr - 48, 0); 
+            }
+            =function SetByte(ptr, value) 
+            ~{
+                =SetDword(ptr, ~(~GetDword(ptr) | 255) | value); 
+            }
+            =function GetByte(ptr) 
+            ~{ 
+                =result = GetDword(ptr) & 255; 
+            }
+            =dword G = GalaxyPtr();
+            =float f; int d; str s;
+            =for (int offset = 0; offset < 8; offset = offset + 1)
+            ~{
+                =int value = GetByte(G + 80 + offset);
+                =//SFT('i = ' + i + ', value = ' + value);
+                =int i = offset;
+                =str type = CT('SC.DiffTypes.' + i + '.type');
+                =s = CT('SC.DiffTypes.' + i + '.text');
+                =InterfaceText('StarMap', 'scItem_diff_text_' + i, s);
+                =if (type == '%')
+                ~{
+                    =d = 9;
+                    =d = round(2.0 * value / d * 255.0);
+                    =d = 510 - d;
+                    =if (d < 256) s = '<color=' + 255 + ',' + d + ',0>';
+                    =else s = '<color=' + (255 + 256 - d) + ',' + 255 + ',0>';
+                    =f = 50.0 * (value + 1.0);
+                    =InterfaceText('StarMap', 'scItem_diff_value_' + i, '' + s + round(f) + '%' + ' ');
+                    =InterfaceImage('StarMap', 'scItem_diff_button_' + i, 'Style:Style.Buttons.Percent');
+                }
+                =else SFT('[SettingsControl SC.Functions.InitDiffValues] Wrong diff type');
+            }
+        }
+    }
+}

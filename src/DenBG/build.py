@@ -8,10 +8,7 @@ import random
 from tqdm import tqdm
 
 import rangers.modbuilder
-from rangers.modbuilder import ModBuilder
 from rangers.dat import DAT
-from rangers.graphics.gi import GI
-from rangers.pkg import PKG
 
 if TYPE_CHECKING:
     T = TypeVar('T')
@@ -24,17 +21,17 @@ def recursive_defaultdict() -> defaultdict:
     return defaultdict(recursive_defaultdict)
 
 
-class Builder(ModBuilder):
+class Builder(rangers.modbuilder.ModBuilder):
     name = 'DenBG'
 
     path = Path(f'Mods/Den/{name}/')
 
     def build(self, src: Path, dst: Path) -> None:
+
         tmp = src / '.tmp'
         pics = src / 'bg'
         pkg_name = f'{self.name}.pkg'
 
-        # shutil.rmtree(tmp, ignore_errors=True)
         tmp.mkdir(parents=True, exist_ok=True)
         (dst / self.path).mkdir(parents=True, exist_ok=True)
         (dst / self.path / 'CFG').mkdir(parents=True, exist_ok=True)
@@ -62,8 +59,8 @@ class Builder(ModBuilder):
                 Path() / 'DATA' / 'BG' / png_file_gov.relative_to(pics).with_suffix('.gi')
             )
 
-            gi_file_planet = tmp / rel_gi_file_planet
-            gi_file_gov = tmp / rel_gi_file_gov
+            gi_file_planet = tmp / 'pkg' / rel_gi_file_planet
+            gi_file_gov = tmp / 'pkg' / rel_gi_file_gov
 
             gi_file_planet.parent.mkdir(parents=True, exist_ok=True)
             gi_file_gov.parent.mkdir(parents=True, exist_ok=True)
@@ -93,7 +90,7 @@ class Builder(ModBuilder):
                 Path() / 'DATA' / 'BG' / png_file_ruin.relative_to(pics).with_suffix('.gi')
             )
 
-            gi_file_ruin = tmp / rel_gi_file_ruin
+            gi_file_ruin = tmp / 'pkg' / rel_gi_file_ruin
 
             gi_file_ruin.parent.mkdir(parents=True, exist_ok=True)
 
@@ -120,32 +117,29 @@ class Builder(ModBuilder):
         cachedata_dat = DAT.from_json_value(cachedata)
         cachedata_dat.to_dat(dst / self.path / 'CFG' / 'CacheData.dat', fmt='HDCache', sign=True)
 
-        pkg = PKG.from_folder(tmp)
-        pkg.compress(9)
-        pkg.to_file(dst / self.path / pkg_name)
+        self.pack_folder(tmp / 'pkg', tmp / pkg_name, 9)
+        self.copy_file(tmp / pkg_name, dst / self.path / pkg_name)
 
-        (dst / self.path / 'ModuleInfo.txt').write_text(
-            rangers.modbuilder.make_info(
-                {
-                    'Name': self.name,
-                    'Section': 'Den',
-                    'Author': 'denball',
-                    'Conflict': '',
-                    'Dependence': 'DenDynamicBG',
-                    'Priority': 0,
-                    'Languages': 'Rus,Eng',
-                    'SmallDescription': 'Добавляет множество фонов для планет и станций',
-                    'FullDescription': f'Добавляет множество фонов для планет и станций.\n'
-                    f'{rangers.modbuilder.stateless_rus}\n'
-                    f'{rangers.modbuilder.legal_rus}\n',
-                    #
-                    'SmallDescriptionEng': 'Adds many backgrounds to planets and stations',
-                    'FullDescriptionEng': f'Adds many backgrounds to planets and stations.\n'
-                    f'{rangers.modbuilder.stateless_eng}\n'
-                    f'{rangers.modbuilder.legal_eng}\n',
-                }
-            ),
-            encoding=rangers.modbuilder.text_encoding,
+        self.write_modinfo(
+            dst / self.path / 'ModuleInfo.txt',
+            {
+                'Name': self.name,
+                'Section': 'Den',
+                'Author': 'denball, Marshalska Rokossovsky, Arti',
+                'Conflict': '',
+                'Dependence': 'DenDynamicBG',
+                'Priority': 0,
+                'Languages': 'Rus,Eng',
+                'SmallDescription': 'Пак с фонам для мода на динамические фоны',
+                'FullDescription': 'Огромный пак всевозможных фонов для планет и станций.\n'
+                f'{rangers.modbuilder.stateless_rus}\n'
+                f'{rangers.modbuilder.legal_rus}\n',
+                #
+                'SmallDescriptionEng': 'Pack with backgrounds for mod with dynamic BGs',
+                'FullDescriptionEng': 'A large pack with lots of backgrounds for planets and stations.\n'
+                f'{rangers.modbuilder.stateless_eng}\n'
+                f'{rangers.modbuilder.legal_eng}\n',
+            },
         )
 
     def rename_bgs(self) -> None:
@@ -169,4 +163,4 @@ class Builder(ModBuilder):
 
 
 if __name__ == '__main__':
-    Builder().build(Path('.'), Path('.build'))
+    Builder()._build()

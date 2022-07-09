@@ -1,3 +1,1 @@
-@echo off
-call python -m rangers build
-pause
+@python build.py || pause

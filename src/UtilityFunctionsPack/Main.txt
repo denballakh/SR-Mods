@@ -1,0 +1,62 @@
+ML ~{
+    StarMap ~{
+        Panel ~{
+            CheatsInputField ~{
+                Label ~{
+                    Active=False
+                    AlignX=Center
+                    AlignY=Center
+                    Font=Font.2Normal
+                    Name=CheatsInputField
+                    Pos=0,0,0
+                    Size=1,1
+                }
+            }
+        }
+    }
+}
+BV ~{
+    OnLoad ~{
+        _UtilityFunctionsLibInit_ ~{
+            01=unknown UtilityFunctionsLibInit = ImportedFunction('UtilityFunctions', 'UtilityFunctionsLibInit');
+            02=UtilityFunctionsLibInit(GalaxyPtr());
+        }
+    }
+    OnStart ~{
+        _UtilityFunctionsLibInit_ ~{
+            01=unknown UtilityFunctionsLibInit = ImportedFunction('UtilityFunctions', 'UtilityFunctionsLibInit');
+            02=UtilityFunctionsLibInit(GalaxyPtr());
+        }
+    }
+}
+Data ~{
+    ScriptLibs ~{
+        UtilityFunctions ~{
+            Path=Mods\Tweaks\UtilityFunctionsPack\DATA\UtilityFunctions.dll
+
+            CustomArtCostCalc=int,CustomArtCostCalc,int
+            CustomArtSizeCalc=int,CustomArtSizeCalc,int
+            DistCoords=int,DistCoords,int,int,int,int
+            Exponent=float,Exponent,float,float
+            GetGalaxyGenerationSeed=int,GetGalaxyGenerationSeed
+            GetParFromString=str,GetParFromString,str,str,int,int
+            GetParFromTxt=str,GetParFromTxt,str,str
+            GetPlanetOrbitProbe=dword,GetPlanetOrbitProbe,dword,int,int
+            GetShipScriptName=str,GetShipScriptName,dword,int
+            GetStringFromClipboard=str,GetStringFromClipboard
+            IsShiftCtrlPressed=int,IsShiftCtrlPressed
+            ParsCountFromString=int,ParsCountFromString,str,str
+            PortionInDiapason=float,PortionInDiapason,float,float,float,float,float
+            RndObject=int,RndObject,int,int,dword
+            RoundTo=float,RoundTo,float,float,int
+            SendStringToClipboard=void,SendStringToClipboard,str
+            SetParFromString=str,SetParFromString,str,str,int,str
+            SetParFromTxt=str,SetParFromTxt,str,str,str
+            ShipJoinToScript=void,ShipJoinToScript,dword,str
+            ShipNearbyShips=dword,ShipNearbyShips,dword,int,int,int,str,str
+            ShipSubrace=int,ShipSubrace,dword,int
+            TrimNumbers=str,TrimNumbers,str
+            UtilityFunctionsLibInit=void,UtilityFunctionsLibInit,dword
+        }
+    }
+}

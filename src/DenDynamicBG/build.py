@@ -9,11 +9,6 @@ class Builder(rangers.modbuilder.ModBuilder):
     path = Path(f'Mods/Den/{name}/')
 
     def build(self, src: Path, dst: Path) -> None:
-        (dst / self.path).mkdir(parents=True, exist_ok=True)
-        (dst / self.path / 'CFG').mkdir(parents=True, exist_ok=True)
-        (dst / self.path / 'CFG' / 'Rus').mkdir(parents=True, exist_ok=True)
-        (dst / self.path / 'CFG' / 'Eng').mkdir(parents=True, exist_ok=True)
-
         self.txt_to_dat(
             src / 'Lang.txt',
             dst / self.path / 'CFG' / 'Rus' / 'Lang.dat',
@@ -68,8 +63,8 @@ class Builder(rangers.modbuilder.ModBuilder):
                 ' - отключить мод\n'
                 ' - загрузить сейв и играть дальше, все фоны сбросятся на обычные\n'
                 '\n'
-                '{rangers.modbuilder.legal_rus}\n'
-                '{rangers.modbuilder.contentless_rus}\n',
+                f'{rangers.modbuilder.legal_rus}\n'
+                f'{rangers.modbuilder.contentless_rus}\n',
                 #
                 'SmallDescriptionEng': 'Different backgrounds on planets and stations',
                 'FullDescriptionEng': 'Different planets and stations will have different backgrounds'
@@ -90,8 +85,8 @@ class Builder(rangers.modbuilder.ModBuilder):
                 ' - disable mod\n'
                 ' - load save and play. All backgrounds will change on default ones.\n'
                 '\n'
-                '{rangers.modbuilder.legal_eng}\n'
-                '{rangers.modbuilder.contentless_eng}\n',
+                f'{rangers.modbuilder.legal_eng}\n'
+                f'{rangers.modbuilder.contentless_eng}\n',
             },
         )
 

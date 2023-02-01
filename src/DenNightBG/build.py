@@ -1,5 +1,5 @@
 from pathlib import Path
-from typing import TYPE_CHECKING, TypeVar
+from typing import Any, TypeVar
 
 from collections import defaultdict
 import shutil
@@ -9,14 +9,8 @@ from tqdm import tqdm
 import rangers.modbuilder
 from rangers.dat import DAT
 
-if TYPE_CHECKING:
-    T = TypeVar('T')
 
-    def tqdm(x: T) -> T:
-        ...
-
-
-def recursive_defaultdict() -> defaultdict:
+def recursive_defaultdict() -> defaultdict[Any, Any]:
     return defaultdict(recursive_defaultdict)
 
 
@@ -31,11 +25,6 @@ class Builder(rangers.modbuilder.ModBuilder):
         pkg_name = f'{self.name}.pkg'
         resource_path = Path() / 'DATA' / 'NightBG'
 
-        # shutil.rmtree(tmp, ignore_errors=True)
-        tmp.mkdir(parents=True, exist_ok=True)
-        (dst / self.path).mkdir(parents=True, exist_ok=True)
-        (dst / self.path / 'CFG').mkdir(parents=True, exist_ok=True)
-
         for png_file in tqdm(list(pics.glob('*.png'))):
             rel_gi_file = resource_path / png_file.relative_to(pics).with_suffix('.gi')
             gi_file = tmp / 'pkg' / rel_gi_file
@@ -44,10 +33,7 @@ class Builder(rangers.modbuilder.ModBuilder):
         self.pack_folder(tmp / 'pkg', tmp / pkg_name, 9)
         self.copy_file(tmp / pkg_name, dst / self.path / pkg_name)
 
-        (dst / self.path / 'INSTALL.TXT').write_text(
-            f'Packages {{\n    Package={self.path / pkg_name}\n}}\n',
-            encoding=rangers.modbuilder.text_encoding,
-        )
+        self.write_install(dst / self.path / 'INSTALL.TXT', [self.path / pkg_name])
 
         cachedata = recursive_defaultdict()
         main = recursive_defaultdict()
@@ -157,31 +143,31 @@ class Builder(rangers.modbuilder.ModBuilder):
             },
         }
 
-        main_dat = DAT.from_json_value(main)
+        main_dat = DAT.from_dict(main)
         main_dat.to_dat(dst / self.path / 'CFG' / 'Main.dat', fmt='HDMain', sign=True)
-        cachedata_dat = DAT.from_json_value(cachedata)
+        cachedata_dat = DAT.from_dict(cachedata)
         cachedata_dat.to_dat(dst / self.path / 'CFG' / 'CacheData.dat', fmt='HDCache', sign=True)
 
         self.write_modinfo(
             dst / self.path / 'ModuleInfo.txt',
-                {
-                    'Name': self.name,
-                    'Section': 'Den',
-                    'Author': 'denball',
-                    'Conflict': '',
-                    'Dependence': 'DenDynamicBG',
-                    'Priority': 0,
-                    'Languages': 'Rus,Eng',
-                    'SmallDescription': 'Добавляет 8 ночных фонов планет',
-                    'FullDescription': 'Добавляет 8 ночных фонов планет.\n'
-                    f'{rangers.modbuilder.stateless_rus}\n'
-                    f'{rangers.modbuilder.legal_rus}\n',
-                    #
-                    'SmallDescriptionEng': 'Add 8 night planet backgrounds',
-                    'FullDescriptionEng': 'Add 8 night planet backgrounds.\n'
-                    f'{rangers.modbuilder.stateless_eng}\n'
-                    f'{rangers.modbuilder.legal_eng}\n',
-                }
+            {
+                'Name': self.name,
+                'Section': 'Den',
+                'Author': 'denball',
+                'Conflict': '',
+                'Dependence': 'DenDynamicBG',
+                'Priority': 0,
+                'Languages': 'Rus,Eng',
+                'SmallDescription': 'Добавляет 8 ночных фонов планет',
+                'FullDescription': 'Добавляет 8 ночных фонов планет.\n'
+                f'{rangers.modbuilder.stateless_rus}\n'
+                f'{rangers.modbuilder.legal_rus}\n',
+                #
+                'SmallDescriptionEng': 'Add 8 night planet backgrounds',
+                'FullDescriptionEng': 'Add 8 night planet backgrounds.\n'
+                f'{rangers.modbuilder.stateless_eng}\n'
+                f'{rangers.modbuilder.legal_eng}\n',
+            },
         )
 
 

@@ -45,21 +45,20 @@ groups: Final[dict[str, list[str]]] = {
         'DenSettingsControl',
         'DenButtonsPack',
         # 'DenBlockMinimap',
+        'DenDynamicBG',
+        'DenDatVersion',
+        'DenGalaxyMapKlingColors',
     ],
     'DenBG': [
-        'DenDynamicBG',
         'DenBG',
         'DenNightBG',
-    ],
-    'DenDatVersion': [
-        'DenDatVersion',
     ],
     'DenPython': [
         'DenPython',
     ],
-    # 'UtilityFunctionsPack': [
-    #     'UtilityFunctionsPack',
-    # ],
+    'UtilityFunctionsPack': [
+        'UtilityFunctionsPack',
+    ],
 }
 
 

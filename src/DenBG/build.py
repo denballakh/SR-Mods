@@ -1,5 +1,5 @@
 from pathlib import Path
-from typing import TYPE_CHECKING, TypeVar
+from typing import Any, TypeVar
 
 from collections import defaultdict
 import shutil
@@ -10,14 +10,8 @@ from tqdm import tqdm
 import rangers.modbuilder
 from rangers.dat import DAT
 
-if TYPE_CHECKING:
-    T = TypeVar('T')
 
-    def tqdm(x: T) -> T:
-        ...
-
-
-def recursive_defaultdict() -> defaultdict:
+def recursive_defaultdict() -> defaultdict[Any, Any]:
     return defaultdict(recursive_defaultdict)
 
 
@@ -27,15 +21,9 @@ class Builder(rangers.modbuilder.ModBuilder):
     path = Path(f'Mods/Den/{name}/')
 
     def build(self, src: Path, dst: Path) -> None:
-
         tmp = src / '.tmp'
         pics = src / 'bg'
         pkg_name = f'{self.name}.pkg'
-
-        tmp.mkdir(parents=True, exist_ok=True)
-        (dst / self.path).mkdir(parents=True, exist_ok=True)
-        (dst / self.path / 'CFG').mkdir(parents=True, exist_ok=True)
-        # (dst / self.path / 'DATA').mkdir(parents=True, exist_ok=True)
 
         cachedata = recursive_defaultdict()
         main = recursive_defaultdict()
@@ -107,14 +95,11 @@ class Builder(rangers.modbuilder.ModBuilder):
             self.png_to_gi(png_file_ruin, gi_file_ruin, fmt=0, opt=32)
             cnt += 1
 
-        (dst / self.path / 'INSTALL.TXT').write_text(
-            f'Packages {{\n    Package={self.path / pkg_name}\n}}\n',
-            encoding=rangers.modbuilder.text_encoding,
-        )
+        self.write_install(dst / self.path / 'INSTALL.TXT', [self.path / pkg_name])
 
-        main_dat = DAT.from_json_value(main)
+        main_dat = DAT.from_dict(main)
         main_dat.to_dat(dst / self.path / 'CFG' / 'Main.dat', fmt='HDMain', sign=True)
-        cachedata_dat = DAT.from_json_value(cachedata)
+        cachedata_dat = DAT.from_dict(cachedata)
         cachedata_dat.to_dat(dst / self.path / 'CFG' / 'CacheData.dat', fmt='HDCache', sign=True)
 
         self.pack_folder(tmp / 'pkg', tmp / pkg_name, 9)

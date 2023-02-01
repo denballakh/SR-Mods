@@ -36,7 +36,7 @@ class Builder(rangers.modbuilder.ModBuilder):
             dst / self.path / 'ModuleInfo.txt',
             {
                 'Name': self.name,
-                'Section': 'Den',
+                'Section': 'Tweaks',
                 'Author': 'Klaxons, denball',
                 'Conflict': '',
                 'Dependence': '',
